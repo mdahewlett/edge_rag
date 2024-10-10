@@ -1,0 +1,30 @@
+# masOS system files
+.DS_Store
+
+# Python
+__pychache__/
+*.py[cod]
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Virtual environments
+venv/
+*.venv
+env/
+
+# Data files
+/data/raw/*
+/data/processed/*
+!/data/raw/.gitkeep
+!/data/processed/.gitkeep
+
+# Model files
+/models/embeddings/*
+!/models/embeddings/.gitkeep
+
+# Environment files
+.env
+
+# Large files
+*.pdf
