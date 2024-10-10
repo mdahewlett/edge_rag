@@ -1,8 +1,9 @@
 import os
 from sentence_transformers import SentenceTransformer
 import numpy as np
-import logging
 import time
+import logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 class DocumentEmbeddingGenerator:
     def __init__(self, model_name='all-MiniLM-L6-v2'):
@@ -73,7 +74,7 @@ class DocumentEmbeddingGenerator:
         except Exception as e:
             logging.error(f"Unexpected error occured while loading embeddings: {str(e)}")
             raise
-        
+
 # Example usage
 if __name__ == "__main__":
     documents = [
