@@ -5,7 +5,7 @@ import time
 import logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-class DocumentEmbeddingGenerator:
+class EmbeddingGenerator:
     def __init__(self, model_name='all-MiniLM-L6-v2'):
         try:
             self.model = SentenceTransformer(model_name)
@@ -14,7 +14,7 @@ class DocumentEmbeddingGenerator:
             logging.error(f"Failed to initialize model {model_name}: {str(e)}")
             raise 
     
-    def generate_embeddings(self, documents):
+    def generate_document_embeddings(self, documents):
         logging.info(f"Generating embeddings for {len(documents)} documents.")
         try:
             embeddings = self.model.encode(documents)
@@ -24,8 +24,18 @@ class DocumentEmbeddingGenerator:
             logging.error(f"Error generating embeddings: {str(e)}")
             raise
     
-    def save_embeddings(self, embeddings, output_dir):
-        logging.info(f"Searching for '{output_dir}' directory.")
+    def generate_query_embedding(self, query: str) -> np.ndarray:
+        logging.info(f"Generating embedding for query: {query[:50]}...")
+        try:
+            embedding = self.model.encode([query])[0]
+            logging.info(f"Successfully generate query embedding. Shape: {embedding.shape}")
+            return embedding
+        except Exception as e:
+            logging.error(f"Error generating query embedding: {str(e)}")
+            raise
+
+    def save_document_embeddings(self, embeddings, output_dir):
+        logging.info(f"Saving embeddings to '{output_dir}' directory.")
         start_time = time.time()
 
         try:
@@ -33,7 +43,6 @@ class DocumentEmbeddingGenerator:
                 logging.info(f"'{output_dir}' directory not found. Creating '{output_dir}'.")
                 os.makedirs(output_dir)
 
-            logging.info(f"Saving embeddings to '{output_dir}' directory.")
             for i, embedding in enumerate(embeddings):
                 if i % 10 == 0:
                     logging.info(f"Saving embedding {i+1}/{len(embeddings)} ({(i+1)/len(embeddings)*100:.2f}%).")
@@ -48,15 +57,15 @@ class DocumentEmbeddingGenerator:
             logging.error(f"Unexpected error occured while saving embeddings: {str(e)}")
             raise
 
-    def load_embeddings(self, input_dir):
+    def load_document_embeddings(self, input_dir):
         logging.info(f"Loading embeddings from '{input_dir}'.")
         start_time = time.time()
 
-        if not os.path.exists(input_dir):
-            logging.error(f"Directory '{input_dir}' not found.")
-            raise FileNotFoundError(f"Directory '{input_dir}' not found.")
-        
         try:
+            if not os.path.exists(input_dir):
+                logging.error(f"Directory '{input_dir}' not found.")
+                raise FileNotFoundError(f"Directory '{input_dir}' not found.")
+            
             embeddings = []
             for i, filename in enumerate(os.listdir(input_dir)):
                 if filename.endswith('.npy'):
@@ -80,20 +89,23 @@ if __name__ == "__main__":
     documents = [
         "This is the first document.",
         "Here's the second document.",
-        "Ant this is the third one.",
+        "And this is the third one.",
         "Is this the last document?",
     ]
 
-    generator = DocumentEmbeddingGenerator()
-    embeddings = generator.generate_embeddings(documents)
+    generator = EmbeddingGenerator()
 
-    print(f"Generated {len(embeddings)} embeddings.")
-    print(f"Shape of first embedding: {embeddings[0].shape}")
+    # Generate document embeddings
+    doc_embeddings = generator.generate_document_embeddings(documents)
+    logging.info(f"Shape of first embedding: {doc_embeddings[0].shape}")
+
+    # Generate query embedding
+    query = "What is the capital of France?"
+    query_embedding = generator.generate_query_embedding(query)
 
     # Save embeddings
-    generator.save_embeddings(embeddings, "embeddings_output")
+    generator.save_document_embeddings(doc_embeddings, "document_embeddings_output")
 
     # Load embeddings
-    loaded_embeddings = generator.load_embeddings("embeddings_output")
-    print(f"Loaded {len(loaded_embeddings)} embeddings.")
-    print(f"Shape of first loaded embedding: {loaded_embeddings[0].shape}")
+    loaded_embeddings = generator.load_document_embeddings("document_embeddings_output")
+    print(f"Shape of first loaded document embedding: {loaded_embeddings[0].shape}")
