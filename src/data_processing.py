@@ -1,6 +1,9 @@
 import os
 from typing import List, Dict
 from pypdf import PdfReader
+import logging
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def load_pdf(file_path: str) -> str:
     """
@@ -12,7 +15,7 @@ def load_pdf(file_path: str) -> str:
     Returns:
     str: Text content of the PDF.
     """
-    print(f"Loading PDF: {file_path}")
+    logging.info(f"Loading PDF: {file_path}")
     reader = PdfReader(file_path)
     text = ""
     total_pages = len(reader.pages)
@@ -21,9 +24,9 @@ def load_pdf(file_path: str) -> str:
     for i, page in enumerate(reader.pages):
         if i % update_interval == 0 or i == total_pages - 1:
             progress = min(100, round((i + 1) / total_pages * 100))
-            print(f"  Processing page {i+1}/{total_pages} ({progress}% complete)")
+            logging.info(f"  Processing page {i+1}/{total_pages} ({progress}% complete)")
         text += page.extract_text() + "\n"
-    print(f"Finished loading PDF: {file_path}")
+    logging.info(f"Finished loading PDF: {file_path}")
     return text
 
 def load_data(directory: str) -> List[Dict]:
@@ -36,20 +39,20 @@ def load_data(directory: str) -> List[Dict]:
     Returns:
     List[Dict]: A list of dictionaries, each representing a document.
     """
-    print(f"Loading data from directory: {directory}")
+    logging.info(f"Loading data from directory: {directory}")
     documents = []
     pdf_files = [f for f in os.listdir(directory) if f.endswith('.pdf')]
-    print(f"Found {len(pdf_files)} PDF files")
+    logging.info(f"Found {len(pdf_files)} PDF files")
 
     for filename in pdf_files:
         file_path = os.path.join(directory, filename)
-        print(f"Processing file: {filename}")
+        logging.info(f"Processing file: {filename}")
         text = load_pdf(file_path)
         documents.append({
             "filename": filename,
             "text": text
         })
-    print(f"Finished loading {len(documents)} documents")
+    logging.info(f"Finished loading {len(documents)} documents")
     return documents
 
 def preprocess_text(text: str) -> str:
@@ -62,11 +65,14 @@ def preprocess_text(text: str) -> str:
     Returns:
     str: The preprocessed text.
     """
-    print("Preprocessing text...")
+    logging.info("Preprocessing text...")
     text = text.lower()
     text = ' '.join(text.split())
-    print("Finished preprocessing text")
+    logging.info("Finished preprocessing text")
     return text
+
+def chunk_text(text: str, chunk_size: int = 500) -> List[str]:
+    return [text[i:1+chunk_size] for i in range(0, len(text), chunk_size)]
 
 def process_documents(documents: List[Dict]) -> List[Dict]:
     """
@@ -78,39 +84,43 @@ def process_documents(documents: List[Dict]) -> List[Dict]:
     Returns:
     List[Dict]: A list of processed document dictionaries.
     """
-    print(f"Processing {len(documents)} documents")
+    logging.info(f"Processing {len(documents)} documents")
     processed_documents = []
     for i, doc in enumerate(documents):
-        print(f"Processing document {i+1}/{len(documents)}")
+        logging.info(f"Processing document {i+1}/{len(documents)}")
         processed_doc = doc.copy()
         if 'text' in processed_doc:
-            processed_doc['text'] = preprocess_text(processed_doc['text'])
+            full_text = preprocess_text(processed_doc['text'])
+            chunks = chunk_text(full_text)
+            processed_doc['chunks'] = chunks
+            processed_doc['text'] = full_text
+            logging.info(f"Document {i+1} chunked into {len(chunks)} chunks") 
         processed_documents.append(processed_doc)
-    print("Finished processing documents")
+    logging.info("Finished processing documents")
     return processed_documents
 
 def main():
-    print("Starting main function")
+    logging.info("Starting main function")
     current_dir = os.path.dirname(os.path.abspath(__file__))
     raw_data_dir = os.path.join(current_dir, '..', 'data', 'raw')
-    print(f"Raw data directory: {raw_data_dir}")
+    logging.info(f"Raw data directory: {raw_data_dir}")
 
     if not os.path.exists(raw_data_dir):
-        print(f"Error: Directory not found: {raw_data_dir}")
+        logging.error(f"Error: Directory not found: {raw_data_dir}")
         return
 
     documents = load_data(raw_data_dir)
     processed_documents = process_documents(documents)
-    print(f"Processed {len(processed_documents)} documents.")
+    logging.info(f"Processed {len(processed_documents)} documents.")
 
-    # Print a sample of the first document's text (first 500 characters)
+    # logging.info a sample of the first document's text (first 500 characters)
     if processed_documents:
-        print("\nSample of first document:")
-        print(processed_documents[0]['text'][:500])
+        logging.info("\nSample of first document:")
+        logging.info(processed_documents[0]['text'][:500])
     else:
-        print("No documents were processed. Check if there are PDF files in the data/raw directory.")
+        logging.info("No documents were processed. Check if there are PDF files in the data/raw directory.")
 
-    print("Main function completed")
+    logging.info("Main function completed")
 
 if __name__ == "__main__":
     main()
