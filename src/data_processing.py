@@ -102,7 +102,7 @@ def process_documents(documents: List[Dict]) -> List[Dict]:
 def main():
     logging.info("Starting main function")
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    raw_data_dir = os.path.join(current_dir, '..', 'data', 'raw')
+    raw_data_dir = os.path.join(current_dir, '..', 'data', 'example_raw')
     logging.info(f"Raw data directory: {raw_data_dir}")
 
     if not os.path.exists(raw_data_dir):
@@ -113,7 +113,7 @@ def main():
     processed_documents = process_documents(documents)
     logging.info(f"Processed {len(processed_documents)} documents.")
 
-    # logging.info a sample of the first document's text (first 500 characters)
+    # Print a sample of the first document's text (first 500 characters)
     if processed_documents:
         logging.info("\nSample of first document:")
         logging.info(processed_documents[0]['text'][:500])

@@ -17,9 +17,20 @@ class EmbeddingGenerator:
     def generate_document_embeddings(self, documents):
         logging.info(f"Generating embeddings for {len(documents)} documents.")
         try:
-            embeddings = self.model.encode(documents)
+            all_chunks = [chunk for doc in documents for chunk in doc['chunks']]
+            embeddings = self.model.encode(all_chunks)
+            embedding_map= []
+            chunk_index = 0
+            for doc_index, doc in enumerate(documents):
+                for _ in doc['chunks']:
+                    embedding_map.append({
+                        'doc_index': doc_index,
+                        'chunk_index': chunk_index,
+                        'embedding': embeddings[chunk_index]
+                    })
+                    chunk_index += 1
             logging.info(f"Successfully generated {len(embeddings)} embeddings.")
-            return embeddings
+            return embedding_map
         except Exception as e:
             logging.error(f"Error generating embeddings: {str(e)}")
             raise
