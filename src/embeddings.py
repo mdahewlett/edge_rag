@@ -4,6 +4,8 @@ from typing import List, Dict, Optional
 import numpy as np
 import time
 import logging
+import pickle
+import glob
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 class EmbeddingGenerator:
@@ -131,13 +133,14 @@ class EmbeddingGenerator:
             logging.error(f"Error generating query embedding: {str(e)}")
             raise
 
-    def save_document_embeddings(self, embeddings: List[np.ndarray], output_dir: str) -> None:
+    def save_document_embeddings(self, embedding_map: List[Dict], output_dir: str, filename: str = "embedding_map.pkl") -> None:
         """
-        Save chunk embeddings, without document or chunk indices, to a directory.
+        Save embedding map to a directory.
 
         Args:
-            embeddings (List[np.ndarray]): A list of vector embeddings, each as a numpy array.
+            embedding_map (List[Dict]): A list of dictionaries, each containing 'doc_index', 'chunk_index', and 'embedding'.
             output_dir (str): The path to the directory where embeddings will be saved.
+            filename (str): The name of the file to save the embedding map. Defaults to "embedding_map.pkl".
         
         Returns:
             None
@@ -147,44 +150,46 @@ class EmbeddingGenerator:
             Exception: For any other saving issues.
 
         """
-        logging.info(f"Saving embeddings to '{output_dir}' directory.")
+        logging.info(f"Saving embedding map to '{output_dir}' directory.")
         start_time = time.time()
 
         try:
             if not os.path.exists(output_dir):
                 logging.info(f"'{output_dir}' directory not found. Creating '{output_dir}'.")
                 os.makedirs(output_dir)
-
-            for i, embedding in enumerate(embeddings):
-                if i % 10 == 0:
-                    logging.info(f"Saving embedding {i+1}/{len(embeddings)} ({(i+1)/len(embeddings)*100:.2f}%).")
-                np.save(os.path.join(output_dir, f'embedding_{i:04d}.npy'), embedding)
             
+            if not filename.endswith('.pkl'):
+                filename += '.pkl'
+
+            with open(os.path.join(output_dir, filename), 'wb') as f:
+                pickle.dump(embedding_map, f)
+
             elapsed_time = time.time() - start_time
-            logging.info(f"Saved {len(embeddings)} embeddings in {elapsed_time:.2f} seconds.")
+            logging.info(f"Saved embedding map with {len(embedding_map)} items in {elapsed_time:.2f} seconds.")
         except IOError as e:
-            logging.error(f"IO error occurred while saving embeddings: {str(e)}")
+            logging.error(f"IO error occurred while saving embedding map: {str(e)}")
             raise
         except Exception as e:
-            logging.error(f"Unexpected error occurred while saving embeddings: {str(e)}")
+            logging.error(f"Unexpected error occurred while saving embedding map: {str(e)}")
             raise
 
-    def load_document_embeddings(self, input_dir: str) -> List[np.ndarray]:
+    def load_document_embeddings(self, input_dir: str, filename: Optional[str] = None) -> List[Dict]:
         """
-        Load embeddings from a directory.
+        Load embedding map from a directory.
 
         Args:
             input_dir (str): The path to the directory containing embeddings saved as .npy files.
-        
+            filename (str, optional): The specific filename to load. If None, loads the first .pkl file found.
+
         Returns:
-            List[np.ndarray]: A list of embeddings, each one a numpy array representing a chunk of text.
+            List[Dict]: A list of dictionaries, each containing 'doc_index', 'chunk_index', and 'embedding'.
 
         Raises:
-            FileNotFoundError: If the directory does not exist.
-            IOError: If there's an issue reading the embedding files.
+            FileNotFoundError: If the directory, specified file, or any .pkl file does not exist.
+            IOError: If there's an issue reading the embedding map file.
             Exception: For any other loading issues.
         """
-        logging.info(f"Loading embeddings from '{input_dir}'.")
+        logging.info(f"Loading embedding map from '{input_dir}'.")
         start_time = time.time()
 
         try:
@@ -192,27 +197,24 @@ class EmbeddingGenerator:
                 logging.error(f"Directory '{input_dir}' not found.")
                 raise FileNotFoundError(f"Directory '{input_dir}' not found.")
             
-            embeddings = []
-            for i, filename in enumerate(os.listdir(input_dir)):
-                if filename.endswith('.npy'):
-                    if i % 10 == 0:
-                        logging.info(f"Loading embedding {i+1} ({filename})")
-                    embedding = np.load(os.path.join(input_dir, filename), allow_pickle=True)
-                    
-                    logging.info(f"Loaded {filename}:")
-                    logging.info(f"  Type: {type(embedding)}")
-                    logging.info(f"  Shape: {embedding.shape if isinstance(embedding, np.ndarray) else 'Not a numpy array'}")
-                    logging.info(f"  Size: {embedding.size if isinstance(embedding, np.ndarray) else 'Not a numpy array'}")
+            if filename:
+                embedding_map_path = os.path.join(input_dir, filename)
+                if not os.path.exists(embedding_map_path):
+                    logging.ERROR(f"Specified file '{filename}' not found in '{input_dir}'.")
+                    raise FileNotFoundError(f"File '{filename}' not found in '{input_dir}'.")
+            else:
+                pkl_files = glob.glob(os.path.join(input_dir, '*.pkl'))
+                if not pkl_files:
+                    logging.error(f"No .pkl files found in '{input_dir}'.")
+                    raise FileNotFoundError(f"No .pkl files found in '{input_dir}'.")
+                embedding_map_path = pkl_files[0]
                 
-                    if isinstance(embedding, np.ndarray) and embedding.size > 0:
-                        embeddings.append(embedding)
-                        logging.info(f"  Status: Added to embeddings list")
-                    else:
-                        logging.warning(f"  Status: Skipped (not a valid numpy array or empty)")
-        
+            with open(embedding_map_path, 'rb') as f:
+                embedding_map = pickle.load(f)
+
             elapsed_time = time.time() - start_time
-            logging.info(f"Loaded {len(embeddings)} embeddings in {elapsed_time:.2f} seconds.")
-            return embeddings
+            logging.info(f"Loaded embedding map with {len(embedding_map)} items from {os.path.basename(embedding_map_path)} in {elapsed_time:.2f} seconds.")
+            return embedding_map
         except IOError as e:
             logging.error(f"IO error occurred while loading embeddings: {str(e)}")
             raise
@@ -231,26 +233,26 @@ if __name__ == "__main__":
     generator = EmbeddingGenerator()
 
     # Generate document embeddings
-    doc_embeddings = generator.generate_document_embeddings(documents)
-    logging.info(f"Shape of first embedding: {doc_embeddings[0]['embedding'].shape}")
-    for i, emb in enumerate(doc_embeddings):
-        logging.info(f"Original embedding {i}:")
-        logging.info(f"  Shape: {emb['embedding'].shape}")
-        logging.info(f"  Size: {emb['embedding'].size}")
-        logging.info(f"  Mean: {emb['embedding'].mean()}")
-        logging.info(f"  Standard deviation: {emb['embedding'].std()}")
+    doc_embedding_map = generator.generate_document_embeddings(documents)
+    logging.info(f"Generated embedding map with {len(doc_embedding_map)} items")
+
+    output_dir = "document_embeddings_output"
 
     # Generate query embedding
     query = "What is the capital of France?"
     query_embedding = generator.generate_query_embedding(query)
-    logging.info(f"Query embedding shape: {query_embedding.shape}")
-    logging.info(f"Query embedding size: {query_embedding.size}")
-    logging.info(f"Query embedding mean: {query_embedding.mean()}")
-    logging.info(f"Query embedding standard deviation: {query_embedding.std()}")
 
-    # Save embeddings
-    generator.save_document_embeddings([emb['embedding'] for emb in doc_embeddings], "document_embeddings_output")
+    # Save embedding map with default filename
+    generator.save_document_embeddings(doc_embedding_map, output_dir)
 
-    # Load embeddings
-    loaded_embeddings = generator.load_document_embeddings("document_embeddings_output")
-    print(f"Shape of first loaded document embedding: {loaded_embeddings[0].shape}")
+    # Save embedding map with custom filename
+    custom_filename = "my_embeddings.pkl"
+    generator.save_document_embeddings(doc_embedding_map, output_dir, custom_filename)
+
+    # Load embedding map without specifying filename (loads first .pkl file)
+    loaded_embedding_map = generator.load_document_embeddings(output_dir)
+    logging.info(f"Loaded embedding map (default) with {len(loaded_embedding_map)} items")
+
+    # Load embedding map with specific filename
+    specific_loaded_map = generator.load_document_embeddings(output_dir, custom_filename)
+    logging.info(f"Loaded specific embedding map with {len(specific_loaded_map)} items")
