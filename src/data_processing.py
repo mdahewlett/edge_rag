@@ -2,6 +2,7 @@ import os
 from typing import List, Dict
 from pypdf import PdfReader
 import logging
+import re
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -71,8 +72,23 @@ def preprocess_text(text: str) -> str:
     logging.info("Finished preprocessing text")
     return text
 
-def chunk_text(text: str, chunk_size: int = 500) -> List[str]:
-    return [text[i:1+chunk_size] for i in range(0, len(text), chunk_size)]
+def chunk_text(text: str, chunk_size: int = 1000, overlap: int = 200) -> List[str]:
+    chunks = []
+
+    sentences = re.split('(?<=[.!?]) +', text)
+
+    current_chunk = ""
+    for sentence in sentences:
+        if len(current_chunk) + len(sentence) > chunk_size and current_chunk:
+            chunks.append(current_chunk.strip())
+            current_chunk = current_chunk[-overlap:] + " " + sentence
+        else:
+            current_chunk += " " + sentence
+
+    if current_chunk.strip():
+        chunks.append(current_chunk.strip())
+
+    return chunks
 
 def process_documents(documents: List[Dict]) -> List[Dict]:
     """
@@ -91,7 +107,9 @@ def process_documents(documents: List[Dict]) -> List[Dict]:
         processed_doc = doc.copy()
         if 'text' in processed_doc:
             full_text = preprocess_text(processed_doc['text'])
+            # logging.info(full_text) # debug
             chunks = chunk_text(full_text)
+            # logging.info(chunks) # debug
             processed_doc['chunks'] = chunks
             processed_doc['text'] = full_text
             logging.info(f"Document {i+1} chunked into {len(chunks)} chunks") 
