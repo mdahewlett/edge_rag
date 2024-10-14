@@ -96,15 +96,15 @@ class EmbeddingGenerator:
             all_chunks = [chunk for doc in documents for chunk in doc['chunks']]
             embeddings = self.model.encode(all_chunks)
             embedding_map= []
-            chunk_index = 0
+            embedding_index = 0
             for doc_index, doc in enumerate(documents):
-                for _ in doc['chunks']:
+                for chunk_index in range(len(doc['chunks'])):
                     embedding_map.append({
                         'doc_index': doc_index,
                         'chunk_index': chunk_index,
-                        'embedding': embeddings[chunk_index]
+                        'embedding': embeddings[embedding_index]
                     })
-                    chunk_index += 1
+                    embedding_index += 1
             logging.info(f"Successfully generated {len(embeddings)} embeddings.")
             return embedding_map
         except Exception as e:
