@@ -42,7 +42,7 @@ class RAGPipeline:
             context.append(doc['chunks'][chunk['chunk_index']])
 
         context = " ".join(context)
-        response = self.generator.generate(query, [context])
+        response = self.generator.generate(query, context)
         return response, retrieved_chunks
 
     def run(self):
