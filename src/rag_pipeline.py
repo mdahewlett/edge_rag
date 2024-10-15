@@ -13,45 +13,53 @@ class RAGPipeline:
         self.embedding_generator = EmbeddingGenerator(model_name=embedding_model)
         self.retriever = None
         self.generator = Generator(model_path=generator_model)
+        self.documents = None
+        self.processed_documents = None
 
     def load_and_process_documents(self):
         logging.info("Loading and processing documents...")
-        documents = load_data(self.data_dir)
-        return process_documents(documents)
+        self.documents = load_data(self.data_dir)
+        self.processed_documents = process_documents(self.documents)
+        return self.processed_documents
     
-    def create_embeddings(self, documents):
+    def create_embeddings(self, processed_documents):
         logging.info("Creating embeddings...")
-        texts = [doc['text'] for doc in documents]
-        return self.embedding_generator.generate_document_embeddings(texts)
+        return self.embedding_generator.generate_document_embeddings(processed_documents)
     
-    def build_index(self, documents, embeddings):
-        logging.info("Buiklding index...")
-        self.retriever = FaissRetriever(dimension=embeddings.shape[1])
-        self.retriever.add_documents(documents, embeddings)
+    def build_index(self, embedding_map):
+        logging.info("Building index...")
+        self.retriever = FaissRetriever(dimension=len(embedding_map[0]['embedding']))
+        self.retriever.add_documents(embedding_map)
     
     def process_query(self, query, k=3):
         logging.info(f"Processing query: {query}")
         query_embedding = self.embedding_generator.generate_query_embedding(query)
-        retrieved_docs = self.retriever.search(query_embedding, k=k)
-        context = [doc['text'] for doc in retrieved_docs]
-        response = self.generator.generate(query, context)
-        return response, retrieved_docs
+        retrieved_chunks = self.retriever.search(query_embedding, k=k)
+        
+        context = []
+        for chunk in retrieved_chunks:
+            doc = self.processed_documents[chunk['doc_index']]
+            context.append(doc['chunks'][chunk['chunk_index']])
+
+        context = " ".join(context)
+        response = self.generator.generate(query, [context])
+        return response, retrieved_chunks
 
     def run(self):
         documents = self.load_and_process_documents()
-        embeddings = self.create_embeddings(documents)
-        self.build_index(documents, embeddings)
+        embedding_map = self.create_embeddings(documents)
+        self.build_index(embedding_map)
 
         while True:
             query = input("Enter your query (or 'quit' to exit): ")
             if query.lower() == 'quit':
                 break
-            response, retrieved_docs = self.process_query(query)
-            print(f"\nResponse: {response}\n")
-            print("Retrieved documents:")
-            for i, doc in enumerate(retrieved_docs, 1):
-                print(f"{i}. {doc['filename']} (score: {doc['score']:.4f})")
-            print()
+            response, retrieved_chunks = self.process_query(query)
+            logging.info(f"\nResponse:\n{response}\n")
+            logging.info("Retrieved documents:")
+            for i, chunk in enumerate(retrieved_chunks, 1):
+                doc = documents[chunk['doc_index']]
+                logging.info(f"{i}. {doc['filename']} (score: {chunk['score']:.4f})\n")
 
 if __name__ == "__main__":
     current_dir = os.path.dirname(os.path.abspath(__file__))
