@@ -119,7 +119,7 @@ class Generator:
 
     def generate(self, 
                  query: str, 
-                 context: List[str], 
+                 context: str, 
                  output_max_length: Optional[int] = 512, 
                  num_beams: Optional[int] = 4, 
                  temperature: Optional[float] = 1.0) -> str:
@@ -143,7 +143,7 @@ class Generator:
         try:
             # Prepare input by combining query and context
             logging.info("Combining query and context...")
-            input_text = f"Query: {query}\n\nContext: {' '.join(context)}\n\nAnswer:"
+            input_text = f"Query: {query}\n\nContext: {context}\n\nAnswer:"
 
             # Tokenize input
             logging.info("Tokenizing input...")
