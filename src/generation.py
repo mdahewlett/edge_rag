@@ -3,7 +3,7 @@ import logging
 from typing import List, Optional
 import torch
 import platform
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, GenerationConfig
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s = %(levelname)s = %(message)s')
 
@@ -29,11 +29,11 @@ class Generator:
         ValueError: If an invalid model path is provided during initialization.
         Exception: For any other initialization, generation, or I/O errors.
     """
-    DEFAULT_MODEL = "google/flan-t5-small"
+    DEFAULT_MODEL = "facebook/bart-large-cnn"
 
     def __init__(self, 
                  model_path: Optional[str] = None, 
-                 input_max_length: Optional[int] = 512, 
+                 input_max_length: Optional[int] = 1024, 
                  device: Optional[str] = None):
         """
         Initialize the Generator with a model path or default model, and specify device.
@@ -57,6 +57,15 @@ class Generator:
 
             self.device = self._get_device(device)
             self.model.to(self.device)
+            self.model.eval()
+
+            self.generation_config = GenerationConfig.from_model_config(self.model.config)
+            self.generation_config.max_length = 512
+            self.generation_config.num_beams = 4
+            self.generation_config.do_sample = True
+            self.generation_config.temperature = 0.7
+            self.generation_config.no_repeat_ngram_size = 3
+            self.generation_config.early_stopping = True
 
             logging.info(f"Model loaded successfully. Using device: {self.device}")
         except Exception as e:
@@ -121,8 +130,9 @@ class Generator:
                  query: str, 
                  context: str, 
                  output_max_length: Optional[int] = 512, 
-                 num_beams: Optional[int] = 4, 
-                 temperature: Optional[float] = 1.0) -> str:
+                 num_beams: Optional[int] = 4,
+                 do_sample: Optional[bool] = True, 
+                 temperature: Optional[float] = 0.7) -> str:
         """
         Generate a response based on the query and context.
 
@@ -131,6 +141,7 @@ class Generator:
             context (List[str]): A list of relevant context strings.
             output_max_length (int): Maximum length of the generated output.
             num_beams (int): 
+            do_sample (bool):
             temperature (float): Temperature for sampling.
 
         Returns:
@@ -143,35 +154,33 @@ class Generator:
         try:
             # Prepare input by combining query and context
             logging.info("Combining query and context...")
-            input_text = f"Query: {query}\n\nContext: {context}\n\nAnswer:"
+            input_text = f"{query} {self.tokenizer.sep_token} {context}"
 
             # Tokenize input
             logging.info("Tokenizing input...")
             inputs = self.tokenizer(input_text, return_tensors="pt", truncation=True, max_length=self.input_max_length)
             inputs = {k: v.to(self.device) for k, v in inputs.items()} 
 
+            # Update generation config
+            self.generation_config.max_length = output_max_length
+            self.generation_config.num_beams = num_beams
+            self.generation_config.do_sample = do_sample
+            self.generation_config.temperature = temperature
+
             # Generate output
             logging.info("Generating output...")
-            outputs = self.model.generate(
-                **inputs, 
-                max_length=output_max_length, 
-                num_beams=num_beams,
-                temperature=temperature,
-                num_return_sequences=1 
-                )
+
+            outputs = self.model.generate(**inputs, generation_config=self.generation_config)
 
             # Decode output
             logging.info("Decoding output...")
             response = self.tokenizer.decode(outputs[0], skip_special_tokens=True)
+            
+            # Remove input from the response
+            response = response.replace(query, "").replace(context, "").strip()
 
             logging.info(f"Generated response: {response[:50]}...")
             return response
-        except ValueError as e:
-            logging.error(f"Invalid input parameters: {str(e)}")
-            raise
-        except RuntimeError as e:
-            logging.error(f"Error during generation process: {str(e)}")
-            raise
         except Exception as e:
             logging.error(f"Error during generation: {str(e)}")
             raise
@@ -194,6 +203,7 @@ class Generator:
             os.makedirs(path, exist_ok=True)
             self.model.save_pretrained(path)
             self.tokenizer.save_pretrained(path)
+            self.generation_config.save_pretrained(path)
             logging.info(f"Model saved successfully to {path}")
         except Exception as e:
             logging.error(f"Error saving model: {str(e)}")
@@ -224,6 +234,7 @@ class Generator:
 
             self.model = AutoModelForSeq2SeqLM.from_pretrained(path)
             self.tokenizer = AutoTokenizer.from_pretrained(path)
+            self.generation_config = GenerationConfig.from_pretrained(path)
             self.model.to(self.device)
             logging.info(f"Model loaded successfully from {path}")
         except Exception as e:
@@ -244,10 +255,10 @@ if __name__ == "__main__":
         logging.info("Continuing with execution...")
 
     # This will work with a Hugging Face model
-    generator_hf = Generator(model_path="facebook/bart-large")
+    generator_hf = Generator(model_path="google/flan-t5-base")
 
     query = "What is the capital of France?"
-    context = ["France is a country in Western Europe.", "Paris is the largest city in France."]
+    context = "France is a country in Western Europe. Paris is the largest city in France."
 
     response = generator_default.generate(query, context)
     logging.info(f"Query: {query}")
@@ -264,6 +275,9 @@ if __name__ == "__main__":
     # Generating summaries
     generator_summary = Generator(input_max_length=1024)
     query_summary = "Summarize the following text:"
-    context_summary = ["A very long piece of text..."] # Imagine this is a long document
+    context_summary = 'The Volkswagen Westfalia, often called the "Westy," is a classic camper van that originated as a collaboration between Volkswagen (VW) and the German coachbuilder Westfalia-Werke. This iconic vehicle is based on Volkswagen\'s Transporter series and became widely popular from the 1950s to the early 2000s. Here''s a breakdown of its history: 1. Origins in the 1950s The Volkswagen Type 2 (the Transporter) was introduced in 1950, following the success of the VW Beetle. Westfalia, a German company that specialized in building vehicle conversions, began converting these VW Transporters into camper vans. The earliest conversions were simple, with fold-out beds, a small table, and storage areas, offering basic functionality for travel and camping. 2. 1960s: The Split-Windshield Era The VW T1 (or Type 2) with its split windshield became the foundation for early Westfalia conversions. During this time, the camper van gained immense popularity with outdoor enthusiasts and the growing counterculture movement, especially in the U.S. The Westfalia conversions typically included pop-up roofs, which allowed for more standing space inside the van when parked, as well as fold-out beds, a kitchen area, and cupboards. The iconic "pop-top" design was introduced, making it practical for long camping trips by providing additional space for sleeping and living. 3. 1970s: The Bay Window Era The T2 (Bay Window) model, introduced in 1967, further refined the VW Westfalia. This version featured a single-piece windshield, more powerful engines, and improvements in design and handling. The 1970s models became symbols of the hippie movement, embodying freedom and adventure. Westfalia continued to innovate with practical additions, including water tanks, refrigerators, stoves, and propane heating. These vans were marketed as affordable alternatives to larger motorhomes, making them popular with young families and adventure-seekers. 4. 1980s: The Vanagon Era (T3) In 1979, Volkswagen introduced the T3 (known as the Vanagon in North America). This model had a more boxy, modern look and a rear-engine layout. The T3 Westfalia campers became more sophisticated, offering features like swiveling captain\'s chairs, larger beds, and better insulation. Some models even had an optional pop-up roof tent, allowing campers to sleep in an upstairs area. The T3 also introduced four-wheel-drive (the Syncro variant), making it more versatile for off-road adventures. It was during this era that the Westfalia solidified its status as a practical yet adventurous vehicle for long-distance travel. 5. 1990s: The Eurovan Era (T4) The T4, known as the Eurovan in North America, marked a major shift in design, as the engine was now moved to the front of the vehicle, giving the van more interior space. The Westfalia versions of the T4 continued to offer pop-up roofs, fold-out beds, and kitchenettes, but with a more modern touch. However, the T4 never achieved the same cult status as the earlier models, and by the late 1990s, production of the VW Westfalia camper was phased out for most markets, with the rise of other, more modern camper van options. 6. 2000s: End of an Era By the early 2000s, the official partnership between VW and Westfalia ended. However, independent companies and enthusiasts continued converting Volkswagen vans into campers, maintaining the spirit of the Westfalia camper van. Legacy and Popularity The VW Westfalia remains an iconic vehicle, beloved by van-life enthusiasts, collectors, and adventurers worldwide. Its practical design, coupled with the nostalgic charm of the VW Transporter, has cemented it as a symbol of freedom and exploration. Even today, original and restored VW Westfalias fetch high prices and are cherished as classic vehicles. Its influence continues, with modern camper vans and the resurgence of "van life" culture taking inspiration from the simplicity and functionality of the original Westfalia camper.' # Imagine this is a long document
     response = generator_default.generate(query_summary, context_summary, output_max_length=150) # Limit summary to max 150 tokens
-    logging.info(f"Resonse: {response}")
+    logging.info(f"Summary:\n\n {response}")
+
+
+

@@ -8,7 +8,7 @@ from generation import Generator
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 class RAGPipeline:
-    def __init__(self, data_dir, embedding_model='all-MiniLM-L6-v2', generator_model='google/flan-t5-small'):
+    def __init__(self, data_dir, embedding_model='all-MiniLM-L6-v2', generator_model='facebook/bart-large-cnn'):
         self.data_dir = data_dir
         self.embedding_generator = EmbeddingGenerator(model_name=embedding_model)
         self.retriever = None
