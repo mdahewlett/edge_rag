@@ -3,7 +3,7 @@ import logging
 from data_processing import load_data, process_documents
 from embeddings import EmbeddingGenerator
 from retrieval import FaissRetriever
-from generation import Generator
+from generation_openai import OpenAIGenerator
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -12,7 +12,7 @@ class RAGPipeline:
         self.data_dir = data_dir
         self.embedding_generator = EmbeddingGenerator(model_name=embedding_model)
         self.retriever = None
-        self.generator = Generator(model_path=generator_model)
+        self.generator = OpenAIGenerator(model_path=generator_model)
         self.documents = None
         self.processed_documents = None
 
