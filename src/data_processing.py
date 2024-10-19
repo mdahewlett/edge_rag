@@ -1,21 +1,34 @@
 import os
-from typing import List, Dict
+from typing import List, Dict, Any, Optional
 from pypdf import PdfReader
 import logging
-import re
+import json
+from openai import OpenAI
+from dotenv import load_dotenv
+from pydantic import BaseModel, ValidationError
+
+# Defining the structure of the ToC
+class Subsection(BaseModel):
+    title: str
+    content: Optional[str]
+
+class Section(BaseModel):
+    title: str
+    subsections: List[Subsection]
+
+class TableOfContents(BaseModel):
+    sections: List[Section]
+
+
+load_dotenv()
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
+openai_api_key = os.getenv("OPENAI_API_KEY")
+
+client = OpenAI(api_key=openai_api_key)
+
 def load_pdf(file_path: str) -> str:
-    """
-    Load text content from a PDF file.
-
-    Args:
-    file_path (str): Path to the PDF file.
-
-    Returns:
-    str: Text content of the PDF.
-    """
     logging.info(f"Loading PDF: {file_path}")
     reader = PdfReader(file_path)
     text = ""
@@ -31,15 +44,6 @@ def load_pdf(file_path: str) -> str:
     return text
 
 def load_data(directory: str) -> List[Dict]:
-    """
-    Load PDF files from a directory.
-
-    Args:
-    directory (str): Path to the directory containing the PDF files.
-
-    Returns:
-    List[Dict]: A list of dictionaries, each representing a document.
-    """
     logging.info(f"Loading data from directory: {directory}")
     documents = []
     pdf_files = [f for f in os.listdir(directory) if f.endswith('.pdf')]
@@ -56,72 +60,110 @@ def load_data(directory: str) -> List[Dict]:
     logging.info(f"Finished loading {len(documents)} documents")
     return documents
 
-def preprocess_text(text: str) -> str:
+def extract_toc(text: str) -> TableOfContents:
+    prompt = f"""
+    Given the following text from a manual, generate a detailed table of contents.
+    Format the output as a JSON object with the following structure:
+    {{
+        "sections": [
+            {{
+                "title": "Section Title",
+                "subsections": [
+                    {{
+                        "title": "Subsection Title",
+                        "content": "Brief description or summary of the subsection"
+                    }}
+                ]
+            }}
+        ]
+    }}
+
+    Text:
+    {text[:4000]}
     """
-    Preprocess the text by converting to lowercase and removing extra whitespace.
+    try:
+        response = client.beta.chat.completions.parse(
+            model='gpt-4o-mini-2024-07-18',
+            messages=[
+                {"role":"system", "content": "You are an assistant that formats outputs as structured JSON."},
+                {"role":"user", "content": prompt}
+            ],
+            response_format=TableOfContents,
+        )
 
-    Args:
-    text (str): The input text to preprocess.
+        print(response.choices[0].message.content)
+        toc = response.choices[0].message.parsed
+        return toc
+    except ValidationError as ve:
+        logging.info(f"Validation Error: {str(ve)}")
+        return None
+    except Exception as e:
+        logging.info(f"An error occured: {str(e)}")
+        return None
 
-    Returns:
-    str: The preprocessed text.
-    """
-    logging.info("Preprocessing text...")
-    text = text.lower()
-    text = ' '.join(text.split())
-    logging.info("Finished preprocessing text")
-    return text
+def split_content(text: str, toc: Dict[str, Any]) -> Dict[str, Any]:
+    def find_content(section: Dict[str, Any], remaining_text:str) -> tuple[Dict[str, Any], str]:
+        start = remaining_text.lower().find(section['title'].lower())
+        if start == -1:
+            # If exact title not found, find a close match
+            words = section['title'].lower().split()
+            for i in range(len(words), 0, -1):
+                partial_title = ' '.join(words[:i])
+                start = remaining_text.lower().find(partial_title)
+                if start != -1:
+                    break
+        
+        if start == -1:
+            logging.warning(f"Could not find section: {section['title']}")
+            return section, remaining_text
+        
+        remaining_text = remaining_text[start:]
+        end = len(remaining_text)
 
-def chunk_text(text: str, chunk_size: int = 1000, overlap: int = 200) -> List[str]:
-    chunks = []
+        if 'subsections' in section:
+            for subsection in section['subsections']:
+                subsection, remaining_text = find_content(subsection, remaining_text)
+                end = min(end, remaining_text.find(subsection['title']))
 
-    sentences = re.split('(?<=[.!?]) +', text)
+        section['content'] = remaining_text[:end].strip()
+        return section, remaining_text[end:]
+    
+    remaining_text = text
+    for section in toc['sections']:
+        section, remaining_text = find_content(section, remaining_text)
 
-    current_chunk = ""
-    for sentence in sentences:
-        if len(current_chunk) + len(sentence) > chunk_size and current_chunk:
-            chunks.append(current_chunk.strip())
-            current_chunk = current_chunk[-overlap:] + " " + sentence
-        else:
-            current_chunk += " " + sentence
-
-    if current_chunk.strip():
-        chunks.append(current_chunk.strip())
-
-    return chunks
+    return toc
 
 def process_documents(documents: List[Dict]) -> List[Dict]:
-    """
-    Process a list of documents by preprocessing their text content.
-
-    Args:
-    documents (List[Dict]): A list of document dictionaries.
-
-    Returns:
-    List[Dict]: A list of processed document dictionaries.
-    """
     logging.info(f"Processing {len(documents)} documents")
     processed_documents = []
     for i, doc in enumerate(documents):
         logging.info(f"Processing document {i+1}/{len(documents)}")
         processed_doc = doc.copy()
-        if 'text' in processed_doc:
-            full_text = preprocess_text(processed_doc['text'])
-            # logging.info(full_text) # debug
-            chunks = chunk_text(full_text)
-            # logging.info(chunks) # debug
-            processed_doc['chunks'] = chunks
-            processed_doc['text'] = full_text
-            logging.info(f"Document {i+1} chunked into {len(chunks)} chunks") 
+        toc = extract_toc(processed_doc['text'])
+        structured_doc = split_content(processed_doc['text'], toc)
+        processed_doc['structured_content'] = structured_doc
+        del processed_doc['text'] # Remove original text to save memory
         processed_documents.append(processed_doc)
     logging.info("Finished processing documents")
     return processed_documents
+
+def save_processed_documents(processed_documents: List[Dict], output_dir: str) -> None:
+    os.makedirs(output_dir, exist_ok=True)
+    for doc in processed_documents:
+        filename = os.path.splitext(doc['filename'])[0] + '.json'
+        output_path = os.path.join(output_dir, filename)
+        with open(output_path, 'w') as f:
+            json.dump(doc['structured_content'], f, indent=2)
+        logging.info(f"Saved processed document: {output_path}")
 
 def main():
     logging.info("Starting main function")
     current_dir = os.path.dirname(os.path.abspath(__file__))
     raw_data_dir = os.path.join(current_dir, '..', 'data', 'example_raw')
+    processed_data_dir = os.path.join(current_dir, '..', 'data', 'processed')
     logging.info(f"Raw data directory: {raw_data_dir}")
+    logging.info(f"Proessed data directory: {processed_data_dir}")
 
     if not os.path.exists(raw_data_dir):
         logging.error(f"Error: Directory not found: {raw_data_dir}")
@@ -129,16 +171,9 @@ def main():
 
     documents = load_data(raw_data_dir)
     processed_documents = process_documents(documents)
-    logging.info(f"Processed {len(processed_documents)} documents.")
-
-    # Print a sample of the first document's text (first 500 characters)
-    if processed_documents:
-        logging.info("\nSample of first document:")
-        logging.info(processed_documents[0]['text'][:500])
-    else:
-        logging.info("No documents were processed. Check if there are PDF files in the data/raw directory.")
-
-    logging.info("Main function completed")
+    save_processed_documents(processed_documents, processed_data_dir)
+    
+    logging.info(f"Main function completed. Processed {len(processed_documents)} documents.")
 
 if __name__ == "__main__":
     main()
