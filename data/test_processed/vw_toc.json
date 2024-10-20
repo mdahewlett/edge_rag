@@ -1,0 +1,372 @@
+{
+  "sections": [
+    {
+      "title": "",
+      "page": "viii",
+      "subsections": [
+        {
+          "title": "Foreword",
+          "page": "viii",
+          "subsubsections": []
+        },
+        {
+          "title": "Warnings and Cautions",
+          "page": "ix, x",
+          "subsubsections": []
+        }
+      ]
+    },
+    {
+      "title": "General",
+      "page": "2",
+      "subsections": [
+        {
+          "title": "Type/Model Identification",
+          "page": "2",
+          "subsubsections": []
+        },
+        {
+          "title": "VIN, Engine No",
+          "page": "2",
+          "subsubsections": []
+        },
+        {
+          "title": "Transmission No, Manual",
+          "page": "3",
+          "subsubsections": []
+        },
+        {
+          "title": "Transmission No, Automatic",
+          "page": "4",
+          "subsubsections": []
+        },
+        {
+          "title": "Lifting Car with Floor Jack/Hoist",
+          "page": "6",
+          "subsubsections": []
+        },
+        {
+          "title": "Towing Car",
+          "page": "5",
+          "subsubsections": []
+        }
+      ]
+    },
+    {
+      "title": "Engine",
+      "page": "10",
+      "subsections": [
+        {
+          "title": "Engine",
+          "page": "10",
+          "subsubsections": [
+            {
+              "title": "Assembly",
+              "page": "10"
+            },
+            {
+              "title": "Crankshaft/Crankcase",
+              "page": "13"
+            },
+            {
+              "title": "Cylinder Heads/Valve Drive",
+              "page": "15"
+            },
+            {
+              "title": "Lubrication System",
+              "page": "17"
+            },
+            {
+              "title": "Cooling System",
+              "page": "19"
+            }
+          ]
+        },
+        {
+          "title": "Fuel Supply",
+          "page": "20",
+          "subsubsections": []
+        },
+        {
+          "title": "Fuel Injection - Diesel System",
+          "page": "23",
+          "subsubsections": []
+        },
+        {
+          "title": "Fuel Injection - AFC System",
+          "page": "24",
+          "subsubsections": []
+        },
+        {
+          "title": "Fuel Injection - Water-cooled",
+          "page": "24",
+          "subsubsections": []
+        },
+        {
+          "title": "Exhaust System/Emission Controls",
+          "page": "26",
+          "subsubsections": []
+        },
+        {
+          "title": "Electrical - Battery, Starter, Alternator",
+          "page": "27",
+          "subsubsections": []
+        },
+        {
+          "title": "Ignition System",
+          "page": "28",
+          "subsubsections": []
+        }
+      ]
+    },
+    {
+      "title": "Clutch Transmission",
+      "page": "30",
+      "subsections": [
+        {
+          "title": "Clutch, Controls",
+          "page": "30",
+          "subsubsections": []
+        },
+        {
+          "title": "Torque Converter",
+          "page": "32",
+          "subsubsections": []
+        },
+        {
+          "title": "Manual Transmission",
+          "page": "34",
+          "subsubsections": [
+            {
+              "title": "Controls, Assembly",
+              "page": "34"
+            },
+            {
+              "title": "Case, Gears, Shafts",
+              "page": "35"
+            }
+          ]
+        },
+        {
+          "title": "Automatic Transmission",
+          "page": "37",
+          "subsubsections": [
+            {
+              "title": "Controls, Assembly",
+              "page": "37"
+            },
+            {
+              "title": "Case, Gears, Shafts",
+              "page": "38"
+            }
+          ]
+        },
+        {
+          "title": "Differential",
+          "page": "39",
+          "subsubsections": []
+        }
+      ]
+    },
+    {
+      "title": "Suspension Brakes Steering",
+      "page": "40",
+      "subsections": [
+        {
+          "title": "Front Wheel Suspension - Shafts and Axle",
+          "page": "40",
+          "subsubsections": []
+        },
+        {
+          "title": "Rear Wheel Suspension - Shafts and Axle",
+          "page": "42",
+          "subsubsections": []
+        },
+        {
+          "title": "Wheels, Tires, Wheel Alignment",
+          "page": "44",
+          "subsubsections": []
+        },
+        {
+          "title": "Brakes",
+          "page": "46",
+          "subsubsections": [
+            {
+              "title": "Mechanical Components",
+              "page": "46"
+            },
+            {
+              "title": "Hydraulic Components, Regulator, Booster",
+              "page": "46"
+            }
+          ]
+        },
+        {
+          "title": "Steering",
+          "page": "48",
+          "subsubsections": []
+        }
+      ]
+    },
+    {
+      "title": "Body Heater",
+      "page": "50",
+      "subsections": [
+        {
+          "title": "Body Dimensions",
+          "page": "50",
+          "subsubsections": []
+        },
+        {
+          "title": "Hoods/Lids",
+          "page": "55",
+          "subsubsections": []
+        },
+        {
+          "title": "Doors",
+          "page": "57",
+          "subsubsections": [
+            {
+              "title": "Front",
+              "page": "57"
+            },
+            {
+              "title": "Rear, Sliding",
+              "page": "58"
+            }
+          ]
+        },
+        {
+          "title": "Sunroof",
+          "page": "60",
+          "subsubsections": []
+        },
+        {
+          "title": "Tarpaulin",
+          "page": "61",
+          "subsubsections": []
+        },
+        {
+          "title": "Bumpers",
+          "page": "63",
+          "subsubsections": []
+        },
+        {
+          "title": "Glass, Window Regulations",
+          "page": "64",
+          "subsubsections": []
+        },
+        {
+          "title": "Body Accessories, Exterior",
+          "page": "66",
+          "subsubsections": []
+        },
+        {
+          "title": "Seat Belt System",
+          "page": "68",
+          "subsubsections": []
+        },
+        {
+          "title": "Trim - Interior",
+          "page": "70",
+          "subsubsections": []
+        },
+        {
+          "title": "Seats",
+          "page": "72",
+          "subsubsections": []
+        },
+        {
+          "title": "Body - Seat Upholstery",
+          "page": "74",
+          "subsubsections": []
+        },
+        {
+          "title": "Camper",
+          "page": "75",
+          "subsubsections": [
+            {
+              "title": "Interior Panels, Roof",
+              "page": "75"
+            },
+            {
+              "title": "Cabinets, Water Tank, Refrigerator",
+              "page": "76"
+            },
+            {
+              "title": "Seats, Beds",
+              "page": "77"
+            }
+          ]
+        },
+        {
+          "title": "Heater/Ventilation",
+          "page": "80",
+          "subsubsections": []
+        },
+        {
+          "title": "Heater Booster",
+          "page": "82",
+          "subsubsections": []
+        },
+        {
+          "title": "Air Conditioner",
+          "page": "87",
+          "subsubsections": []
+        }
+      ]
+    },
+    {
+      "title": "Electrical",
+      "page": "90",
+      "subsections": [
+        {
+          "title": "Instruments, Radio",
+          "page": "90",
+          "subsubsections": []
+        },
+        {
+          "title": "Windshield Wiper and Washer",
+          "page": "92",
+          "subsubsections": []
+        },
+        {
+          "title": "Lights - Exterior",
+          "page": "94",
+          "subsubsections": []
+        },
+        {
+          "title": "Wiring",
+          "page": "97",
+          "subsubsections": []
+        }
+      ]
+    },
+    {
+      "title": "Appendix",
+      "page": "1",
+      "subsections": [
+        {
+          "title": "Vehicle Care",
+          "page": "1",
+          "subsubsections": []
+        },
+        {
+          "title": "Do-it-yourself Service",
+          "page": "20",
+          "subsubsections": []
+        },
+        {
+          "title": "Technical Data",
+          "page": "26",
+          "subsubsections": []
+        },
+        {
+          "title": "Maintenance Tables",
+          "page": "28",
+          "subsubsections": []
+        }
+      ]
+    }
+  ]
+}
