@@ -15,13 +15,17 @@ env/
 
 # Data files
 /data/raw/*
-/data/processed/*
 !/data/raw/.gitkeep
+!/data/raw
+
+/data/processed/*
 !/data/processed/.gitkeep
+!/data/processed
 
 # Model files
 /models/embeddings/*
 !/models/embeddings/.gitkeep
+!/models/embeddings
 
 # Environment files
 .env
