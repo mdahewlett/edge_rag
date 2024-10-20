@@ -86,15 +86,13 @@ def find_table_of_contents(pdf_path):
             # Check response
             if response.choices[0].message.content.strip().lower() == 'yes':
                 logging.info("Found it!")
-                return page_num + 1
+                return page_num
             
             logging.info("Not that one...")
             
     return None # if no ToC found
 
-def make_toc(pdf_path, page_num):
-    reader = PdfReader(pdf_path)
-
+def make_table_of_contents(pdf_path, page_num):
     with tempfile.TemporaryDirectory() as temp_dir:
 
         # Convert PDF page to image
@@ -137,8 +135,7 @@ def make_toc(pdf_path, page_num):
                 response_format=TableOfContents,
             )
 
-            print(response.choices[0].message.content)
-            toc = response.choices[0].message.parsed
+            toc = response.choices[0].message.content
 
             return toc
         except ValidationError as ve:
@@ -166,7 +163,12 @@ def main():
 
     vanagon_filepath = os.path.join(current_dir, '..', 'data', 'test_raw', 'test1.pdf')
 
-    make_toc(vanagon_filepath, 3)
+    toc_page = find_table_of_contents(vanagon_filepath)
+    logging.info(f"Table of contents page: {toc_page}")
+
+    result = make_table_of_contents(vanagon_filepath, toc_page)
+
+    print(result)
 
 if __name__ == '__main__':
     main()
