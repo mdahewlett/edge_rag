@@ -86,18 +86,19 @@ def process_documents(directory):
             logging.info(f"Processing: {file}")
             toc_page = find_table_of_contents(pdf_path)
             if toc_page:
-                results[file] = f"Table of contents found on page {toc_page}"
+                results[file] = f"{toc_page}"
             else:
-                results[file] = "No table of contents found"
+                results[file] = ""
     return results
 
-# Usage
-current_dir = os.path.dirname(os.path.abspath(__file__))
-raw_data_dir = os.path.join(current_dir, '..', 'data', 'example_raw')
+def main():
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    raw_data_dir = os.path.join(current_dir, '..', 'data', 'example_raw')
 
-logging.info(f"Searhcing for PDFs in: {raw_data_dir}")
+    logging.info(f"Searhcing for PDFs in: {raw_data_dir}")
+    results = process_documents(raw_data_dir)
+    for file, result, in results.items():
+        print(f"{file}: {result}")
 
-results = process_documents(raw_data_dir)
-
-for file, result, in results.items():
-    print(f"{file}: {result}")
+if __name__ == '__main__':
+    main()
