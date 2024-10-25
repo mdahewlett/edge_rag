@@ -8,7 +8,7 @@ from typing import List, Tuple, Optional, Dict
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-def get_coordinates(pdf_path: str) -> Optional[Dict[str, int]]:
+def get_coordinates(pdf_path: str, output_path: str) -> Optional[Dict[str, int]]:
     points: List[Tuple[int, int]] = []
 
     def click_event(event, x, y, flags, params):
@@ -44,18 +44,19 @@ def get_coordinates(pdf_path: str) -> Optional[Dict[str, int]]:
             "bottom": points[1][1]
         }
 
-        with open('coordinates.json', 'w') as f:
+        with open(output_path, 'w') as f:
             json.dump(coords, f, indent=4)
         
-        print(f"Coodinates saved to coordinates.json")
+        print(f"Coodinates saved to {output_path}")
         return coords
     return None
 
 if __name__ == '__main__':
     current_dir = os.path.dirname(os.path.abspath(__file__))
 
-    vanagon_filepath = os.path.join(current_dir, '..', 'data', 'raw', 'ocr_page_Bentley_Manual_right.pdf')
+    raw_filepath = os.path.join(current_dir, '..', 'data', 'raw', 'ocr_page_Bentley_Manual_right.pdf')
+    processed_filepath = os.path.join(current_dir, '..', 'data', 'processed', 'ocr_coordinates_Bentley_Manual.json')
 
-    coords = get_coordinates(vanagon_filepath)
+    coords = get_coordinates(raw_filepath, processed_filepath)
 
     logging.info(f"The coordinates are:\n{coords}")
