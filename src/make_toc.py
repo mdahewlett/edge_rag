@@ -164,7 +164,7 @@ def main():
     vanagon_filepath = os.path.join(current_dir, '..', 'data', 'test_raw', 'test1.pdf')
 
     toc_page = find_table_of_contents(vanagon_filepath)
-    logging.info(f"Table of contents page: {toc_page}")
+    logging.info(f"Table of contents page: {toc_page + 1}")
 
     result = make_table_of_contents(vanagon_filepath, toc_page)
 
