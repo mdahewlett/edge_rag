@@ -8,15 +8,15 @@ import tempfile
 import logging
 from pydantic import BaseModel, ValidationError
 from typing import List, Dict, Any, Optional
+import json
 
 # Defining the structure of the ToC
 class Subsection(BaseModel):
     title: str
-    page: str
+    subsection_num: str
 
 class Section(BaseModel):
     title: str
-    page: str
     subsections: List[Subsection]
 
 class TableOfContents(BaseModel):
@@ -169,6 +169,13 @@ def main():
     result = make_table_of_contents(vanagon_filepath, toc_page)
 
     print(result)
+
+    save_filepath = os.path.join(current_dir, '..', 'data', 'processed', 'test1_toc.json')
+
+    logging.info(f"Saving json ToC")
+    with open(save_filepath, 'w') as f:
+        json.dump(result, f)
+    logging.info(f"Saved json ToC")
 
 if __name__ == '__main__':
     main()
