@@ -80,7 +80,7 @@ def extract_text_from_pages(pdf_path, zones):
     # convert pdf to images
     pages = convert_from_path(pdf_path)
 
-    results = []
+    page_summaries = []
     for i, page in enumerate(pages):
 
         # give developper progress updates
@@ -97,7 +97,7 @@ def extract_text_from_pages(pdf_path, zones):
 
         # ignore first 20 pages as edge cases for now
         if i < 19:
-            results.append(page_summary)
+            page_summaries.append(page_summary)
             continue
 
         # extract text
@@ -126,8 +126,8 @@ def extract_text_from_pages(pdf_path, zones):
             else:
                 page_summary["topic_list"].append(item)
 
-        results.append(page_summary)
-    return results
+        page_summaries.append(page_summary)
+    return page_summaries
 
 
 def main():
@@ -145,16 +145,16 @@ def main():
     zones = load_coordinate_zones(json_path)
     logging.info(f"Loaded coordinate zones: {zones}")
 
-    results = extract_text_from_pages(pdf_path, zones)
-    logging.info(f"Results:\n")
-    for result in results:
-        logging.info(f"{result}\n")
+    page_summaries = extract_text_from_pages(pdf_path, zones)
+    logging.info(f"Summaries:\n")
+    for page_summary in page_summaries:
+        logging.info(f"{page_summary}\n")
 
-    logging.info(f"Format of results object:\n{results}")
+    logging.info(f"Format of Summaries object:\n{page_summaries}")
 
     logging.info(f"Saving json page summaries")
     with open(save_filepath, "w") as f:
-        json.dump(results, f)
+        json.dump(page_summaries, f)
     logging.info(f"Saved json page summaries")
 
 
