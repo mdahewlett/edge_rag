@@ -9,10 +9,10 @@ from dotenv import load_dotenv
 from pydantic import BaseModel
 from typing import List
 import io
+import re
 
 # Defining structure of the page summary text
 class PageSummary(BaseModel):
-    topic_list: List[str]
     page_num: int
     section_num: str
 
@@ -64,18 +64,24 @@ def extract_text_from_pages(pdf_path, coordinates):
     for i, page in enumerate(pages):
         if i != 0 and i % 10 == 0:
             logging.info(f"extracting text from page number {i}")
-        page_dict = {}
+        page_dict = {'topic_list': []}
         text = extract_text_from_zone(page, coordinates)
-        page_dict['text'] = text
+        split_text = text.split('\n')
+        for item in split_text:
+            if re.match(r"^\d+(\.\d+)?[A-Za-z]?$", item):
+                page_dict['section_num'] = item
+            elif re.match(r"^[A-Za-z]-\d+$", item):
+                continue
+            else:
+                page_dict['topic_list'].append(item)
         page_dict['page_num'] = i
         results.append(page_dict)
-    
     return results
 
 def main():
     current_dir = os.path.dirname(os.path.abspath(__file__))
 
-    pdf_path = os.path.join(current_dir, '..', 'data', 'raw', 'ocr_70page.pdf')
+    pdf_path = os.path.join(current_dir, '..', 'data', 'raw', 'ocr_1page_right.pdf')
     json_path = os.path.join(current_dir, '..', 'data', 'processed', 'ocr_coordinates.json')
 
     coordinates = load_coordinates(json_path)
