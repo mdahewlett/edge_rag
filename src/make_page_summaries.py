@@ -87,7 +87,7 @@ def extract_text_from_pages(pdf_path, zones):
         if i != 0 and i % 10 == 0:
             logging.info(f"extracting text from page number {i}")
 
-        page_dict = {
+        page_summary = {
             "section_num": "",
             "section_name": "",
             "section_num_detailed": "",
@@ -97,7 +97,7 @@ def extract_text_from_pages(pdf_path, zones):
 
         # ignore first 20 pages as edge cases for now
         if i < 19:
-            results.append(page_dict)
+            results.append(page_summary)
             continue
 
         # extract text
@@ -107,16 +107,16 @@ def extract_text_from_pages(pdf_path, zones):
         for item in page_header:
             item = item.strip()
             if re.match(r"^\d+$", item):
-                page_dict["section_num"] = item
+                page_summary["section_num"] = item
             else:
-                page_dict["section_name"] = item
+                page_summary["section_name"] = item
 
         # add remaining page info from footer text
         for item in page_footer:
             item = item.strip()
             # section number
             if re.match(r"^\d+(\.\d+)?[A-Za-z]?$", item):
-                page_dict["section_num_detailed"] = item
+                page_summary["section_num_detailed"] = item
 
             # throw out page format e.g. A-10, G-4
             elif re.match(r"^[A-Za-z]-\d+$", item):
@@ -124,9 +124,9 @@ def extract_text_from_pages(pdf_path, zones):
 
             # topics and tags go together
             else:
-                page_dict["topic_list"].append(item)
+                page_summary["topic_list"].append(item)
 
-        results.append(page_dict)
+        results.append(page_summary)
     return results
 
 
