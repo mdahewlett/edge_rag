@@ -4,6 +4,12 @@ from dotenv import load_dotenv
 from typing import Optional, List, Dict
 import openai
 import json
+from pydantic import BaseModel
+
+# Output structure
+class PageNumbers(BaseModel):
+     page_num: List[str]
+     section_num_detailed: List[str]
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s = %(levelname)s = %(message)s')
 
@@ -25,8 +31,6 @@ class OpenAIretriever:
     def search(self,
                query: str,
                context: List[Dict], # specifc for page summaries
-               max_tokens: Optional[int] = 150,
-               temperature: Optional[float] = 0.7
                ) -> str:
 
         messages = [
@@ -42,12 +46,11 @@ class OpenAIretriever:
             {"role": "user", "content": query},
         ]
 
-        response = openai.chat.completions.create(
-            model = self.model,
-            messages=messages,
-            max_tokens=max_tokens,
-            temperature=temperature
-        )
+        response = openai.beta.chat.completions.parse(
+                model=self.model,
+                messages= messages,
+                response_format=PageNumbers,
+            )
 
         generated_reponse = response.choices[0].message.content
 
@@ -57,7 +60,7 @@ if __name__ == "__main__":
         current_dir = os.path.dirname(os.path.abspath(__file__))
 
         page_summaries_filepath = os.path.join(
-            current_dir, "..", "data", "processed", "test1_page_summaries.json"
+            current_dir, "..", "tests", "test_data", "test_page_summaries.json"
         )
 
         retriever = OpenAIretriever()
@@ -70,4 +73,4 @@ if __name__ == "__main__":
         reponse = retriever.search(query, context)
         logging.info(f"The question was: {query}")
         logging.info(f"The response is: {reponse}")
-        logging.info(f"The page and detailed section number should have been: 22 and 2a")
+        logging.info(f"The page and detailed section number should have been: 21 and 2a")
