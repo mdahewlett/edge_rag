@@ -1,0 +1,1117 @@
+[
+  {
+    "section_num": "",
+    "section_name": "",
+    "section_num_detailed": "",
+    "page_num": 0,
+    "topic_list": []
+  },
+  {
+    "section_num": "",
+    "section_name": "",
+    "section_num_detailed": "",
+    "page_num": 1,
+    "topic_list": []
+  },
+  {
+    "section_num": "",
+    "section_name": "",
+    "section_num_detailed": "",
+    "page_num": 2,
+    "topic_list": []
+  },
+  {
+    "section_num": "",
+    "section_name": "",
+    "section_num_detailed": "",
+    "page_num": 3,
+    "topic_list": []
+  },
+  {
+    "section_num": "",
+    "section_name": "",
+    "section_num_detailed": "",
+    "page_num": 4,
+    "topic_list": []
+  },
+  {
+    "section_num": "",
+    "section_name": "",
+    "section_num_detailed": "",
+    "page_num": 5,
+    "topic_list": []
+  },
+  {
+    "section_num": "",
+    "section_name": "",
+    "section_num_detailed": "",
+    "page_num": 6,
+    "topic_list": []
+  },
+  {
+    "section_num": "",
+    "section_name": "",
+    "section_num_detailed": "",
+    "page_num": 7,
+    "topic_list": []
+  },
+  {
+    "section_num": "",
+    "section_name": "",
+    "section_num_detailed": "",
+    "page_num": 8,
+    "topic_list": []
+  },
+  {
+    "section_num": "",
+    "section_name": "",
+    "section_num_detailed": "",
+    "page_num": 9,
+    "topic_list": []
+  },
+  {
+    "section_num": "",
+    "section_name": "",
+    "section_num_detailed": "",
+    "page_num": 10,
+    "topic_list": []
+  },
+  {
+    "section_num": "",
+    "section_name": "",
+    "section_num_detailed": "",
+    "page_num": 11,
+    "topic_list": []
+  },
+  {
+    "section_num": "",
+    "section_name": "",
+    "section_num_detailed": "",
+    "page_num": 12,
+    "topic_list": []
+  },
+  {
+    "section_num": "",
+    "section_name": "",
+    "section_num_detailed": "",
+    "page_num": 13,
+    "topic_list": []
+  },
+  {
+    "section_num": "",
+    "section_name": "",
+    "section_num_detailed": "",
+    "page_num": 14,
+    "topic_list": []
+  },
+  {
+    "section_num": "",
+    "section_name": "",
+    "section_num_detailed": "",
+    "page_num": 15,
+    "topic_list": []
+  },
+  {
+    "section_num": "",
+    "section_name": "",
+    "section_num_detailed": "",
+    "page_num": 16,
+    "topic_list": []
+  },
+  {
+    "section_num": "",
+    "section_name": "",
+    "section_num_detailed": "",
+    "page_num": 17,
+    "topic_list": []
+  },
+  {
+    "section_num": "",
+    "section_name": "",
+    "section_num_detailed": "",
+    "page_num": 18,
+    "topic_list": []
+  },
+  {
+    "section_num": "1",
+    "section_name": "General",
+    "section_num_detailed": "1",
+    "page_num": 19,
+    "topic_list": []
+  },
+  {
+    "section_num": "2",
+    "section_name": "General",
+    "section_num_detailed": "2",
+    "page_num": 20,
+    "topic_list": [
+      "-",
+      "Type/Model/ Assemblies identification",
+      "Vehicle identification number (VIN)",
+      "Engine number"
+    ]
+  },
+  {
+    "section_num": "2",
+    "section_name": "General",
+    "section_num_detailed": "2a",
+    "page_num": 21,
+    "topic_list": [
+      "From May 1987",
+      "Engine code",
+      "Compression pressure values"
+    ]
+  },
+  {
+    "section_num": "3",
+    "section_name": "General",
+    "section_num_detailed": "3",
+    "page_num": 22,
+    "topic_list": ["4-speed", "Manual transmission code letters"]
+  },
+  {
+    "section_num": "3",
+    "section_name": "General",
+    "section_num_detailed": "3a",
+    "page_num": 23,
+    "topic_list": ["5-speed", "Manual transmission code letters"]
+  },
+  {
+    "section_num": "3",
+    "section_name": "General",
+    "section_num_detailed": "3b",
+    "page_num": 24,
+    "topic_list": ["Syncro", "Front final drive code letters"]
+  },
+  {
+    "section_num": "4",
+    "section_name": "General",
+    "section_num_detailed": "4",
+    "page_num": 25,
+    "topic_list": ["part number (arrow)", "Automatic transmission code letters"]
+  },
+  {
+    "section_num": "5",
+    "section_name": "General",
+    "section_num_detailed": "5",
+    "page_num": 26,
+    "topic_list": ["Lifting vehicle with hoist/floor jack"]
+  },
+  {
+    "section_num": "6",
+    "section_name": "General",
+    "section_num_detailed": "6",
+    "page_num": 27,
+    "topic_list": ["Vanagon", "Towing"]
+  },
+  {
+    "section_num": "7",
+    "section_name": "General",
+    "section_num_detailed": "7",
+    "page_num": 28,
+    "topic_list": ["Rear towing - all", "Syncro-front/rear towing", "Towing"]
+  },
+  {
+    "section_num": "8",
+    "section_name": "General",
+    "section_num_detailed": "8",
+    "page_num": 29,
+    "topic_list": [
+      "Air-cooled AFC",
+      "CAN/USA, not Calif.",
+      "Ignition distributor and settings"
+    ]
+  },
+  {
+    "section_num": "9",
+    "section_name": "General",
+    "section_num_detailed": "9",
+    "page_num": 30,
+    "topic_list": [
+      "Air-cooled AFC",
+      "California",
+      "Ignition distributor",
+      "and settings"
+    ]
+  },
+  {
+    "section_num": "10",
+    "section_name": "General",
+    "section_num_detailed": "10",
+    "page_num": 31,
+    "topic_list": [
+      "Water-cooled",
+      "Digijet",
+      "Ignition distributor and settings"
+    ]
+  },
+  {
+    "section_num": "",
+    "section_name": "",
+    "section_num_detailed": "",
+    "page_num": 32,
+    "topic_list": ["Index"]
+  },
+  {
+    "section_num": "10",
+    "section_name": "Engine-Assembly",
+    "section_num_detailed": "10.2",
+    "page_num": 33,
+    "topic_list": ["Air cooled - AFC", "Engine, removing"]
+  },
+  {
+    "section_num": "10",
+    "section_name": "Engine-Assembly",
+    "section_num_detailed": "10.3",
+    "page_num": 34,
+    "topic_list": ["Air cooled - AFC", "Engine, removing"]
+  },
+  {
+    "section_num": "10",
+    "section_name": "Engine - Assembly",
+    "section_num_detailed": "10.4",
+    "page_num": 35,
+    "topic_list": ["Air cooled - AFC", "Engine, removing"]
+  },
+  {
+    "section_num": "10",
+    "section_name": "Engine-Assembly",
+    "section_num_detailed": "10.5",
+    "page_num": 36,
+    "topic_list": ["-", "Air cooled - AFC", "Engine, installing"]
+  },
+  {
+    "section_num": "10",
+    "section_name": "Engine-Assembly",
+    "section_num_detailed": "10.6",
+    "page_num": 37,
+    "topic_list": ["Diesel", "Engine, removing"]
+  },
+  {
+    "section_num": "10",
+    "section_name": "Engine-Assembly",
+    "section_num_detailed": "10.7",
+    "page_num": 38,
+    "topic_list": ["Diesel", "Engine, removing/installing"]
+  },
+  {
+    "section_num": "10",
+    "section_name": "Engine-Assembly",
+    "section_num_detailed": "10.8",
+    "page_num": 39,
+    "topic_list": ["Water-cooled", "Engine, removing"]
+  },
+  {
+    "section_num": "10",
+    "section_name": "Engine-Assembly",
+    "section_num_detailed": "10.9",
+    "page_num": 40,
+    "topic_list": ["- - -", "Water-cooled", "Engine, removing"]
+  },
+  {
+    "section_num": "10",
+    "section_name": "Engine-Assembly",
+    "section_num_detailed": "10.10",
+    "page_num": 41,
+    "topic_list": ["Water-cooled", "Engine, removing/installing"]
+  },
+  {
+    "section_num": "11",
+    "section_name": "General",
+    "section_num_detailed": "11",
+    "page_num": 42,
+    "topic_list": ["Digifant", "Ignition settings"]
+  },
+  {
+    "section_num": "12",
+    "section_name": "General",
+    "section_num_detailed": "12",
+    "page_num": 43,
+    "topic_list": ["Digifant", "Technical data"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "",
+    "section_num_detailed": "13.1",
+    "page_num": 44,
+    "topic_list": ["Index"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine - Crankshaft, - Crankcase",
+    "section_num_detailed": "13.2",
+    "page_num": 45,
+    "topic_list": ["Air-cooled AFC", "Engine, disassembling/assembling"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, Crankcase",
+    "section_num_detailed": "13.3",
+    "page_num": 46,
+    "topic_list": ["Air-cooled AFC", "Engine, disassembling/assembling"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine - Crankshaft, Crankcase",
+    "section_num_detailed": "13.4",
+    "page_num": 47,
+    "topic_list": ["Air-cooled AFC", "Engine, disassembling/assembling"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, Crankcase",
+    "section_num_detailed": "13.5",
+    "page_num": 48,
+    "topic_list": ["Air-cooled AFC", "Engine carrier/support"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, - Crankcase",
+    "section_num_detailed": "13.6",
+    "page_num": 49,
+    "topic_list": ["Air-cooled AFC", "Engine, disassembling/assembling"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, Crankcase",
+    "section_num_detailed": "13.7",
+    "page_num": 50,
+    "topic_list": ["Air-cooled AFC", "Engine, Bassembling/assembling", "C.7"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, Crankcase",
+    "section_num_detailed": "13.8",
+    "page_num": 51,
+    "topic_list": [
+      "Cylinder head",
+      "Pistons",
+      "Air-cooled AFC",
+      "Distributor drive"
+    ]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine - Crankshaft, Crankcase",
+    "section_num_detailed": "13.9",
+    "page_num": 52,
+    "topic_list": [
+      "rig. ,",
+      "aunean on Seat, teeling Taw",
+      "Installing",
+      "Distributor",
+      "Air-cooled AFC",
+      "Crankshaft oil seals",
+      "Flywheel/Torque converter drive plate"
+    ]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, - Crankcase",
+    "section_num_detailed": "13.10",
+    "page_num": 53,
+    "topic_list": ["Air-cooled AFC", "Crankshaft end play"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, Crankcase",
+    "section_num_detailed": "13.11",
+    "page_num": 54,
+    "topic_list": ["the", "Air cooled-AFC", "Piston", "Cylinder"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, - Crankcase",
+    "section_num_detailed": "13.12",
+    "page_num": 55,
+    "topic_list": ["Piston", "Air-cooled AFC", "Rings"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine - Crankshaft, Crankcase",
+    "section_num_detailed": "13.13",
+    "page_num": 56,
+    "topic_list": ["Piston", "Air-cooled AFC", "Cylinder"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine - Crankshaft, - Crankcase",
+    "section_num_detailed": "13.14",
+    "page_num": 57,
+    "topic_list": ["Crankcase", "Crankshaft", "Air-cooled AFC", "Camshaft"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine - Crankshaft, Crankcase",
+    "section_num_detailed": "13.15",
+    "page_num": 58,
+    "topic_list": [":", "Air-cooled AFC", "Camshaft"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine - Crankshaft, - Crankcase",
+    "section_num_detailed": "13.16",
+    "page_num": 59,
+    "topic_list": ["Crankshaft", "Air-cooled AFC", "Connecting rod"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft - Crankcase",
+    "section_num_detailed": "13.17",
+    "page_num": 60,
+    "topic_list": [
+      "VISIO when Installed",
+      "Air-cooled AFC",
+      "Connecting rod",
+      "Crankshaft pilot bearing"
+    ]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, Crankcase",
+    "section_num_detailed": "13.18",
+    "page_num": 61,
+    "topic_list": ["Diesel", "Engine, disassembling/assembling"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine - Crankshaft, Crankcase",
+    "section_num_detailed": "13.19",
+    "page_num": 62,
+    "topic_list": ["13-593", "Diesel", "Engine, disassembling/assembling"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, Crankcase",
+    "section_num_detailed": "13.20",
+    "page_num": 63,
+    "topic_list": [
+      "by nana",
+      "Fuel Injection pipes",
+      "Injection pump sprocket",
+      "Diesel",
+      "Drive belt"
+    ]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, Crankcase",
+    "section_num_detailed": "13.21",
+    "page_num": 64,
+    "topic_list": ["Diesel", "Drive belt", "Drive belt sprocket bolt"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, Crankcase",
+    "section_num_detailed": "13.21a",
+    "page_num": 65,
+    "topic_list": ["Diesel", "Drive belt cover"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, Crankcase",
+    "section_num_detailed": "13.22",
+    "page_num": 66,
+    "topic_list": ["Crankshaft", "Diesel", "Intermediate shaft"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, Crankcase",
+    "section_num_detailed": "13.23",
+    "page_num": 67,
+    "topic_list": ["graduations or 0.25 THITT", "Diesel", "Flywheel"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine - Crankshaft, Crankcase",
+    "section_num_detailed": "13.24",
+    "page_num": 68,
+    "topic_list": [
+      "Intermediate shaft oil seal",
+      "Pilot bearing",
+      "Diesel",
+      "Crankshaft end play"
+    ]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine - Crankshaft, Crankcase",
+    "section_num_detailed": "13.25",
+    "page_num": 69,
+    "topic_list": ["Diesel", "Crankshaft oil seal", "Main bearing clearance"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine - Crankshaft, Crankcase",
+    "section_num_detailed": "13.26",
+    "page_num": 70,
+    "topic_list": ["Diesel", "Crankshaft oil seal"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "",
+    "section_num_detailed": "13.27",
+    "page_num": 71,
+    "topic_list": [
+      "tightening procedures Fig. TT",
+      "Cylinder block",
+      "0-12",
+      "Diesel",
+      "Piston",
+      "Connecting rod"
+    ]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, - Crankcase",
+    "section_num_detailed": "13.28",
+    "page_num": 72,
+    "topic_list": ["Connecting rod", "Piston", "Diesel", "Piston pin"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, Crankcase",
+    "section_num_detailed": "13.29",
+    "page_num": 73,
+    "topic_list": ["Piston rings", "Diesel", "Piston", "Cylinder"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine - Crankshaft, - Crankcase",
+    "section_num_detailed": "13.30",
+    "page_num": 74,
+    "topic_list": ["Cylinder bore", "Diesel", "Connecting rod clearance"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine - Crankshaft, Crankcase",
+    "section_num_detailed": "13.31",
+    "page_num": 75,
+    "topic_list": [
+      "Piston identification",
+      "Diesel",
+      "Piston height",
+      "Cylinder head gasket"
+    ]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, Crankcase",
+    "section_num_detailed": "13.32",
+    "page_num": 76,
+    "topic_list": ["Water-cooled", "Engine, disassembling/assembling"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, Crankcase",
+    "section_num_detailed": "13.33",
+    "page_num": 77,
+    "topic_list": [
+      "1983-1985",
+      "Water-cooled",
+      "Engine, disassembling/assembling"
+    ]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, - Crankcase",
+    "section_num_detailed": "13.34",
+    "page_num": 78,
+    "topic_list": ["Water-cooled-from 1986", "Engine, disassembling/assembling"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, Crankcase",
+    "section_num_detailed": "13.35",
+    "page_num": 79,
+    "topic_list": [
+      "-",
+      "Water-cooled from 1986",
+      "Three groove pulley,",
+      "removal/Installation"
+    ]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, - Crankcase",
+    "section_num_detailed": "13.36",
+    "page_num": 80,
+    "topic_list": [
+      "ee nopan Group -",
+      "Water-cooled",
+      "Engine, disassembling/assembling"
+    ]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, - Crankcase",
+    "section_num_detailed": "13.37",
+    "page_num": 81,
+    "topic_list": [
+      "replace TY necessary",
+      "Water-cooled",
+      "Engine, disassembling/assembling"
+    ]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, Crankcase",
+    "section_num_detailed": "13.37a",
+    "page_num": 82,
+    "topic_list": [
+      "Engine, carrier/support",
+      "Water-cooled",
+      "1983-1985",
+      "Engine, disassembling/assembling"
+    ]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine - Crankshaft, Crankcase",
+    "section_num_detailed": "13.38",
+    "page_num": 83,
+    "topic_list": [
+      "B = installed position",
+      "Water-cooled",
+      "Engine, carrier/support",
+      "Engine, disassembling/assembling"
+    ]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, Crankcase",
+    "section_num_detailed": "13.39",
+    "page_num": 84,
+    "topic_list": [
+      "Ignition distributor drive shaft",
+      "Crankcase halves",
+      "Water-cooled",
+      "Crankshaft oil seal"
+    ]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine - Crankshaft, - Crankcase",
+    "section_num_detailed": "13.40",
+    "page_num": 85,
+    "topic_list": [
+      "Crankshaft oil seal",
+      "Water-cooled",
+      "Torque converter drive plate",
+      "Crankshaft end play"
+    ]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, - Crankcase",
+    "section_num_detailed": "13.41",
+    "page_num": 86,
+    "topic_list": ["Water-cooled from 1986", "Crankshaft end play"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine - Crankshaft, Crankcase",
+    "section_num_detailed": "13.42",
+    "page_num": 87,
+    "topic_list": [
+      "Water-cooled",
+      "Crankshaft end play",
+      "Triple V-belt pulley"
+    ]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, Crankcase",
+    "section_num_detailed": "13.43",
+    "page_num": 88,
+    "topic_list": ["Water-cooled", "Piston/Cylinder"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, - Crankcase",
+    "section_num_detailed": "13.44",
+    "page_num": 89,
+    "topic_list": [
+      "reamer 3153.",
+      "E",
+      "Piston/cylinder sleeve",
+      "Water-cooled",
+      "Piston pins/circlips",
+      "Piston classifications"
+    ]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, Crankcase",
+    "section_num_detailed": "13.45",
+    "page_num": 90,
+    "topic_list": ["Piston rings", "Water-cooled", "Piston", "E"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, Crankcase",
+    "section_num_detailed": "13.46",
+    "page_num": 91,
+    "topic_list": ["-", "Water-cooled", "Piston/Cylinder sleeve"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, - Crankcase",
+    "section_num_detailed": "13.47",
+    "page_num": 92,
+    "topic_list": ["Water-cooled", "Piston pin hole burrs, removing"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine - Crankshaft, - Crankcase",
+    "section_num_detailed": "13.48",
+    "page_num": 93,
+    "topic_list": [
+      "-",
+      "Crankcase",
+      "1983-1985",
+      "Water-cooled",
+      "Crankshaft",
+      "Camshaft"
+    ]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, Crankcase",
+    "section_num_detailed": "13.49",
+    "page_num": 94,
+    "topic_list": [
+      "Crankcase",
+      "Crankshaft",
+      "Water-cooled from 1986",
+      "Camshaft",
+      "E-"
+    ]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, - Crankcase",
+    "section_num_detailed": "13.50",
+    "page_num": 95,
+    "topic_list": ["Camshaft", "Water-cooled", "Oil pickup line"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, Crankcase",
+    "section_num_detailed": "13.51",
+    "page_num": 96,
+    "topic_list": ["Water-cooled from 1986", "Thrust washer, main bearing"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine - Crankshaft, Crankcase",
+    "section_num_detailed": "",
+    "page_num": 97,
+    "topic_list": ["13.52 Crankshaft", "Water-cooled"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, Crankcase",
+    "section_num_detailed": "13.53",
+    "page_num": 98,
+    "topic_list": ["-", "_", "Water-cooled", "Crankshaft journal sizes"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, Crankcase",
+    "section_num_detailed": "13.54",
+    "page_num": 99,
+    "topic_list": [
+      "Crankshaft/Circlip",
+      "Crankshaft timing gear",
+      "Water-cooled",
+      "Connecting rod"
+    ]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, Crankcase",
+    "section_num_detailed": "13.55",
+    "page_num": 100,
+    "topic_list": [
+      "Water-cooled",
+      "Removal/Installation,",
+      "Connecting rod bolts"
+    ]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine-Crankshaft, Crankcase",
+    "section_num_detailed": "13.56",
+    "page_num": 101,
+    "topic_list": ["Water-cooled", "Crankshaft pilot bearing"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine - Crankshaft, Crankcase",
+    "section_num_detailed": "13.57",
+    "page_num": 102,
+    "topic_list": ["1983-1985", "1.9 L", "Water-cooled", "Crankcase, replacing"]
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine - Crankshaft, - Crankcase",
+    "section_num_detailed": "13.58",
+    "page_num": 103,
+    "topic_list": ["Water-cooled", "1.9 L", "1983-1985", "Crankcase, replacing"]
+  },
+  {
+    "section_num": "15",
+    "section_name": "",
+    "section_num_detailed": "15.1",
+    "page_num": 104,
+    "topic_list": ["Index"]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine-Cylinder Head, Valve Drive",
+    "section_num_detailed": "",
+    "page_num": 105,
+    "topic_list": ["15.2 head", "Air cooled - AFC", "Cylinder"]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine-Cylinder Head, Valve Drive",
+    "section_num_detailed": "15.3",
+    "page_num": 106,
+    "topic_list": [
+      "Rocker arm shaft",
+      "Air cooled - AFC",
+      "Valve spring",
+      "Valves"
+    ]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine-Cylinder Head, Valve Drive",
+    "section_num_detailed": "15.4",
+    "page_num": 107,
+    "topic_list": [
+      "Valve lapping",
+      "Valve guides",
+      "Air cooled-AFC",
+      "Valve seat"
+    ]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine-Cylinder Head, Valve Drive",
+    "section_num_detailed": "15.5",
+    "page_num": 108,
+    "topic_list": ["Air cooled - AFC", "Valve seats", "Valve guides"]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine-Cylinder Head, Valve Drive",
+    "section_num_detailed": "15.6",
+    "page_num": 109,
+    "topic_list": [
+      "if NO, bleed lifter as follows:",
+      "Valve guides",
+      "Air cooled-AFC",
+      "Hydraulic valve lifters"
+    ]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine-Cylinder Head, Valve Drive",
+    "section_num_detailed": "15.7",
+    "page_num": 110,
+    "topic_list": ["-", "Air cooled-AFC -", "E", "Hydraulic valve lifters"]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine-Cylinder Head, Valve Drive",
+    "section_num_detailed": "15.8",
+    "page_num": 111,
+    "topic_list": ["Diesel", "Cylinder head"]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine-Cylinder Head, Valve Drive",
+    "section_num_detailed": "15.9",
+    "page_num": 112,
+    "topic_list": [
+      "e",
+      "Cylinder head",
+      "Diesel",
+      "Cylinder head bolts",
+      "Cylinder head gasket"
+    ]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine-Cylinder Head, Valve Drive",
+    "section_num_detailed": "15.10",
+    "page_num": 113,
+    "topic_list": ["Camshaft", "Cylinder head", "Diesel", "Valves"]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine-Cylinder Head, Valve Drive",
+    "section_num_detailed": "15.11",
+    "page_num": 114,
+    "topic_list": ["is", "Diesel", "Valve adjusting disc", "Valve clearance"]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine-Cylinder Head, Valve Drive",
+    "section_num_detailed": "15.12",
+    "page_num": 115,
+    "topic_list": ["Camshaft bearing caps", "Diesel", "Valve stem seals"]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine-Cylinder Head, Valve Drive",
+    "section_num_detailed": "15.13",
+    "page_num": 116,
+    "topic_list": ["Diesel", "Valve springs/seats", "Valve guides"]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine-Cylinder Head, Valve Drive",
+    "section_num_detailed": "15.14",
+    "page_num": 117,
+    "topic_list": ["Valve seats", "Valves", "Diesel", "Cylinder head"]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine-Cylinder Head, Valve Drive",
+    "section_num_detailed": "15.15",
+    "page_num": 118,
+    "topic_list": ["Diesel", "Camshaft", "Camshaft oil seal"]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine-Cylinder Head, Valve Drive",
+    "section_num_detailed": "15.15a",
+    "page_num": 119,
+    "topic_list": [
+      "Camshaft oil seal, installing",
+      "Diesel",
+      "Camshaft radial clearance"
+    ]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine-Cylinder Head, Valve Drive",
+    "section_num_detailed": "15.16",
+    "page_num": 120,
+    "topic_list": ["Diesel", "Compression, checking"]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine-Cylinder Head, Valve Drive",
+    "section_num_detailed": "15.17",
+    "page_num": 121,
+    "topic_list": ["Water-cooled", "Cylinder head"]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine-Cylinder Head, Valve Drive",
+    "section_num_detailed": "15.18",
+    "page_num": 122,
+    "topic_list": ["Valves/springs/dimensions/", "refacing", "Water-cooled"]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine-Cylinder Head, Valve Drive",
+    "section_num_detailed": "15.19",
+    "page_num": 123,
+    "topic_list": ["Water-cooled", "Valve seats, refacing"]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine-Cylinder Head, Valve Drive",
+    "section_num_detailed": "15.20",
+    "page_num": 124,
+    "topic_list": ["Valve guides", "Compression, checking", "Water-cooled"]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine-Cylinder Head, Valve Drive",
+    "section_num_detailed": "15.21",
+    "page_num": 125,
+    "topic_list": ["Water-cooled", "Cylinder head, assembly"]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine-Cylinder Head, Valve Drive",
+    "section_num_detailed": "15.22",
+    "page_num": 126,
+    "topic_list": ["Water-cooled", "Engine block, assembly"]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine-Cylinder Head, Valve Drive",
+    "section_num_detailed": "15.23",
+    "page_num": 127,
+    "topic_list": [
+      "-",
+      "Water-cooled",
+      "Cylinder head",
+      "Hydraulic valve lifters"
+    ]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine-Cylinder Head, Valve Drive",
+    "section_num_detailed": "15.24",
+    "page_num": 128,
+    "topic_list": ["THE", "Water-cooled", "Hydraulic valve lifers"]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine-Cylinder Head, Valve Drive",
+    "section_num_detailed": "15.25",
+    "page_num": 129,
+    "topic_list": ["Water-cooled", "Pushrod tubes"]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine-Cylinder Head, Valve Drive",
+    "section_num_detailed": "15.26",
+    "page_num": 130,
+    "topic_list": ["Water-cooled", "Cylinder head resealing"]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine - Cylinder Head, Valve Drive",
+    "section_num_detailed": "15.27",
+    "page_num": 131,
+    "topic_list": ["-", "Water-cooled", "Cylinder head resealing"]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine-Cylinder Head, Valve Drive",
+    "section_num_detailed": "15.28",
+    "page_num": 132,
+    "topic_list": ["Water-cooled", "Cylinder head resealing"]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine - Cylinder Head, Valve Drive",
+    "section_num_detailed": "15.29",
+    "page_num": 133,
+    "topic_list": ["Water-cooled", "Cylinder head resealing"]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine-Cylinder Head, Valve Drive",
+    "section_num_detailed": "15.30",
+    "page_num": 134,
+    "topic_list": ["Water-cooled", "Cylinder head resealing"]
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine-Cylinder Head, Valve Drive",
+    "section_num_detailed": "15.31",
+    "page_num": 135,
+    "topic_list": ["Gasoline additive"]
+  }
+]

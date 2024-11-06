@@ -86,8 +86,8 @@ def get_coordinates(pdf_path: str, output_path: str) -> Optional[Dict[str, Dict[
 if __name__ == '__main__':
     current_dir = os.path.dirname(os.path.abspath(__file__))
 
-    raw_filepath = os.path.join(current_dir, '..', 'data', 'raw', 'ocr_1page_right.pdf')
-    processed_filepath = os.path.join(current_dir, '..', 'data', 'processed', 'ocr_coordinates.json')
+    raw_filepath = os.path.join(current_dir, '..', 'data', 'raw', 'manual_single_page.pdf')
+    processed_filepath = os.path.join(current_dir, '..', 'data', 'processed', 'coordinates.json')
 
     coords = get_coordinates(raw_filepath, processed_filepath)
 

@@ -1,0 +1,120 @@
+{
+  "sections": [
+    {
+      "title": "General",
+      "subsections": [
+        { "title": "Type/Model Identification", "subsection_num": "page 2" },
+        { "title": "VIN, Engine No.", "subsection_num": "page 2" },
+        { "title": "Transmission No., manual", "subsection_num": "page 4" },
+        { "title": "Transmission No., automatic", "subsection_num": "page 4" },
+        {
+          "title": "Lifting car with floor jack/hoist",
+          "subsection_num": "page 6"
+        },
+        { "title": "Towing Car", "subsection_num": "page 5" }
+      ]
+    },
+    {
+      "title": "Engine",
+      "subsections": [
+        { "title": "Engineu2014Assembly", "subsection_num": "10" },
+        { "title": "Crankshaft/Crankcase", "subsection_num": "13" },
+        { "title": "Cylinder Heads/Valve Drive", "subsection_num": "15" },
+        { "title": "Lubrication System", "subsection_num": "17" },
+        { "title": "Cooling System", "subsection_num": "19" },
+        { "title": "Fuel Supply", "subsection_num": "20" },
+        { "title": "Fuel Injectionu2014Diesel System", "subsection_num": "23" },
+        { "title": "Fuel Injectionu2014AFC System", "subsection_num": "24" },
+        { "title": "Fuel Injectionu2014Water-cooled", "subsection_num": "26" },
+        { "title": "Exhaust System/Emission Controls", "subsection_num": "26" },
+        {
+          "title": "Electricalu2014Battery, Starter, Alternator",
+          "subsection_num": "27"
+        },
+        { "title": "Ignition System", "subsection_num": "28" }
+      ]
+    },
+    {
+      "title": "Clutch Transmission",
+      "subsections": [
+        { "title": "Clutch, Controls", "subsection_num": "30" },
+        { "title": "Torque Converter", "subsection_num": "32" },
+        {
+          "title": "Manual Transmissionu2014Controls, Assembly",
+          "subsection_num": "34"
+        },
+        {
+          "title": "Automatic Transmissionu2014Controls, Assembly",
+          "subsection_num": "37"
+        },
+        { "title": "Case, Gears, Shafts", "subsection_num": "35" },
+        { "title": "Differential", "subsection_num": "39" }
+      ]
+    },
+    {
+      "title": "Suspension Brakes Steering",
+      "subsections": [
+        {
+          "title": "Front Wheel Suspensionu2014Shafts and Axle",
+          "subsection_num": "40"
+        },
+        {
+          "title": "Rear Wheel Suspensionu2014Shafts and Axle",
+          "subsection_num": "42"
+        },
+        { "title": "Wheels, Tires, Wheel Alignment", "subsection_num": "44" },
+        { "title": "Brakesu2014Mechanical Components", "subsection_num": "46" },
+        {
+          "title": "Hydraulic Components, Regulator, Booster",
+          "subsection_num": "47"
+        },
+        { "title": "Steering", "subsection_num": "48" }
+      ]
+    },
+    {
+      "title": "Body Heater",
+      "subsections": [
+        { "title": "Body Dimensions", "subsection_num": "50" },
+        { "title": "Hoods/Lids", "subsection_num": "55" },
+        { "title": "Doorsu2014Front", "subsection_num": "57" },
+        { "title": "Rear, Sliding", "subsection_num": "58" },
+        { "title": "Sunroof", "subsection_num": "61" },
+        { "title": "Tarpaulin", "subsection_num": "63" },
+        { "title": "Bumpers", "subsection_num": "64" },
+        { "title": "GLASS, Window Regulators", "subsection_num": "66" },
+        { "title": "Body Accessories, Exterior", "subsection_num": "68" },
+        { "title": "Seal Test", "subsection_num": "69" },
+        { "title": "Trimu2014Interior", "subsection_num": "71" },
+        { "title": "Seats", "subsection_num": "73" },
+        { "title": "Bodyu2014Seat Upholstery", "subsection_num": "75" },
+        { "title": "Camperu2014Interior Panels, Roof", "subsection_num": "77" },
+        {
+          "title": "Cabinets, Water Tank, Refrigerator",
+          "subsection_num": "80"
+        },
+        { "title": "Seats, Beds", "subsection_num": "82" },
+        { "title": "Heater/Ventilation", "subsection_num": "84" },
+        { "title": "Heater Booster", "subsection_num": "86" },
+        { "title": "Air Conditioner", "subsection_num": "87" }
+      ]
+    },
+    {
+      "title": "Electrical",
+      "subsections": [
+        { "title": "Instruments, Radio", "subsection_num": "90" },
+        { "title": "Windshield Wiper and Washer", "subsection_num": "92" },
+        { "title": "Lightsu2014Exterior", "subsection_num": "94" },
+        { "title": "Wiring", "subsection_num": "97" }
+      ]
+    },
+    {
+      "title": "Appendix",
+      "subsections": [
+        { "title": "Vehicle Care", "subsection_num": "1" },
+        { "title": "Do-it-yourself Service", "subsection_num": "20" },
+        { "title": "Technical Data", "subsection_num": "23" },
+        { "title": "Maintenance Tables", "subsection_num": "28" }
+      ]
+    }
+  ]
+}

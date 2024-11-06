@@ -1,0 +1,276 @@
+[
+  {
+    "section_num": "",
+    "section_name": "",
+    "topic_dict": { "Index": [32] },
+    "first_page_num": 0
+  },
+  {
+    "section_num": "1",
+    "section_name": "General",
+    "topic_dict": {},
+    "first_page_num": 19
+  },
+  {
+    "section_num": "2",
+    "section_name": "General",
+    "topic_dict": {
+      "-": [20],
+      "Type/Model/ Assemblies identification": [20],
+      "Vehicle identification number (VIN)": [20],
+      "Engine number": [20],
+      "From May 1987": [21],
+      "Engine code": [21],
+      "Compression pressure values": [21]
+    },
+    "first_page_num": 20
+  },
+  {
+    "section_num": "3",
+    "section_name": "General",
+    "topic_dict": {
+      "4-speed": [22],
+      "Manual transmission code letters": [22, 23],
+      "5-speed": [23],
+      "Syncro": [24],
+      "Front final drive code letters": [24]
+    },
+    "first_page_num": 22
+  },
+  {
+    "section_num": "4",
+    "section_name": "General",
+    "topic_dict": {
+      "part number (arrow)": [25],
+      "Automatic transmission code letters": [25]
+    },
+    "first_page_num": 25
+  },
+  {
+    "section_num": "5",
+    "section_name": "General",
+    "topic_dict": { "Lifting vehicle with hoist/floor jack": [26] },
+    "first_page_num": 26
+  },
+  {
+    "section_num": "6",
+    "section_name": "General",
+    "topic_dict": { "Vanagon": [27], "Towing": [27] },
+    "first_page_num": 27
+  },
+  {
+    "section_num": "7",
+    "section_name": "General",
+    "topic_dict": {
+      "Rear towing - all": [28],
+      "Syncro-front/rear towing": [28],
+      "Towing": [28]
+    },
+    "first_page_num": 28
+  },
+  {
+    "section_num": "8",
+    "section_name": "General",
+    "topic_dict": {
+      "Air-cooled AFC": [29],
+      "CAN/USA, not Calif.": [29],
+      "Ignition distributor and settings": [29]
+    },
+    "first_page_num": 29
+  },
+  {
+    "section_num": "9",
+    "section_name": "General",
+    "topic_dict": {
+      "Air-cooled AFC": [30],
+      "California": [30],
+      "Ignition distributor": [30],
+      "and settings": [30]
+    },
+    "first_page_num": 30
+  },
+  {
+    "section_num": "10",
+    "section_name": "General",
+    "topic_dict": {
+      "Water-cooled": [31, 39, 40, 41],
+      "Digijet": [31],
+      "Ignition distributor and settings": [31],
+      "Air cooled - AFC": [33, 34, 35, 36],
+      "Engine, removing": [33, 34, 35, 37, 39, 40],
+      "-": [36],
+      "Engine, installing": [36],
+      "Diesel": [37, 38],
+      "Engine, removing/installing": [38, 41],
+      "- - -": [40]
+    },
+    "first_page_num": 31
+  },
+  {
+    "section_num": "11",
+    "section_name": "General",
+    "topic_dict": { "Digifant": [42], "Ignition settings": [42] },
+    "first_page_num": 42
+  },
+  {
+    "section_num": "12",
+    "section_name": "General",
+    "topic_dict": { "Digifant": [43], "Technical data": [43] },
+    "first_page_num": 43
+  },
+  {
+    "section_num": "13",
+    "section_name": "Engine - Crankshaft, - Crankcase",
+    "topic_dict": {
+      "Index": [44],
+      "Air-cooled AFC": [
+        45, 46, 47, 48, 49, 50, 51, 52, 53, 55, 56, 57, 58, 59, 60
+      ],
+      "Engine, disassembling/assembling": [
+        45, 46, 47, 49, 61, 62, 76, 77, 78, 80, 81, 82, 83
+      ],
+      "Engine carrier/support": [48],
+      "Engine, Bassembling/assembling": [50],
+      "C.7": [50],
+      "Cylinder head": [51],
+      "Pistons": [51],
+      "Distributor drive": [51],
+      "rig. ,": [52],
+      "aunean on Seat, teeling Taw": [52],
+      "Installing": [52],
+      "Distributor": [52],
+      "Crankshaft oil seals": [52],
+      "Flywheel/Torque converter drive plate": [52],
+      "Crankshaft end play": [53, 68, 85, 86, 87],
+      "the": [54],
+      "Air cooled-AFC": [54],
+      "Piston": [54, 55, 56, 71, 72, 73, 90],
+      "Cylinder": [54, 56, 73],
+      "Rings": [55],
+      "Crankcase": [57, 93, 94],
+      "Crankshaft": [57, 59, 66, 93, 94],
+      "Camshaft": [57, 58, 93, 94, 95],
+      ":": [58],
+      "Connecting rod": [59, 60, 71, 72, 99],
+      "VISIO when Installed": [60],
+      "Crankshaft pilot bearing": [60, 101],
+      "Diesel": [61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75],
+      "13-593": [62],
+      "by nana": [63],
+      "Fuel Injection pipes": [63],
+      "Injection pump sprocket": [63],
+      "Drive belt": [63, 64],
+      "Drive belt sprocket bolt": [64],
+      "Drive belt cover": [65],
+      "Intermediate shaft": [66],
+      "graduations or 0.25 THITT": [67],
+      "Flywheel": [67],
+      "Intermediate shaft oil seal": [68],
+      "Pilot bearing": [68],
+      "Crankshaft oil seal": [69, 70, 84, 85],
+      "Main bearing clearance": [69],
+      "tightening procedures Fig. TT": [71],
+      "Cylinder block": [71],
+      "0-12": [71],
+      "Piston pin": [72],
+      "Piston rings": [73, 90],
+      "Cylinder bore": [74],
+      "Connecting rod clearance": [74],
+      "Piston identification": [75],
+      "Piston height": [75],
+      "Cylinder head gasket": [75],
+      "Water-cooled": [
+        76, 77, 80, 81, 82, 83, 84, 85, 87, 88, 89, 90, 91, 92, 93, 95, 97, 98,
+        99, 100, 101, 102, 103
+      ],
+      "1983-1985": [77, 82, 93, 102, 103],
+      "Water-cooled-from 1986": [78],
+      "-": [79, 91, 93, 98],
+      "Water-cooled from 1986": [79, 86, 94, 96],
+      "Three groove pulley,": [79],
+      "removal/Installation": [79],
+      "ee nopan Group -": [80],
+      "replace TY necessary": [81],
+      "Engine, carrier/support": [82, 83],
+      "B = installed position": [83],
+      "Ignition distributor drive shaft": [84],
+      "Crankcase halves": [84],
+      "Torque converter drive plate": [85],
+      "Triple V-belt pulley": [87],
+      "Piston/Cylinder": [88],
+      "reamer 3153.": [89],
+      "E": [89, 90],
+      "Piston/cylinder sleeve": [89],
+      "Piston pins/circlips": [89],
+      "Piston classifications": [89],
+      "Piston/Cylinder sleeve": [91],
+      "Piston pin hole burrs, removing": [92],
+      "E-": [94],
+      "Oil pickup line": [95],
+      "Thrust washer, main bearing": [96],
+      "13.52 Crankshaft": [97],
+      "_": [98],
+      "Crankshaft journal sizes": [98],
+      "Crankshaft/Circlip": [99],
+      "Crankshaft timing gear": [99],
+      "Removal/Installation,": [100],
+      "Connecting rod bolts": [100],
+      "1.9 L": [102, 103],
+      "Crankcase, replacing": [102, 103]
+    },
+    "first_page_num": 44
+  },
+  {
+    "section_num": "15",
+    "section_name": "Engine-Cylinder Head, Valve Drive",
+    "topic_dict": {
+      "Index": [104],
+      "15.2 head": [105],
+      "Air cooled - AFC": [105, 106, 108],
+      "Cylinder": [105],
+      "Rocker arm shaft": [106],
+      "Valve spring": [106],
+      "Valves": [106, 113, 117],
+      "Valve lapping": [107],
+      "Valve guides": [107, 108, 109, 116, 124],
+      "Air cooled-AFC": [107, 109],
+      "Valve seat": [107],
+      "Valve seats": [108, 117],
+      "if NO, bleed lifter as follows:": [109],
+      "Hydraulic valve lifters": [109, 110, 127],
+      "-": [110, 127, 131],
+      "Air cooled-AFC -": [110],
+      "E": [110],
+      "Diesel": [111, 112, 113, 114, 115, 116, 117, 118, 119, 120],
+      "Cylinder head": [111, 112, 113, 117, 121, 127],
+      "e": [112],
+      "Cylinder head bolts": [112],
+      "Cylinder head gasket": [112],
+      "Camshaft": [113, 118],
+      "is": [114],
+      "Valve adjusting disc": [114],
+      "Valve clearance": [114],
+      "Camshaft bearing caps": [115],
+      "Valve stem seals": [115],
+      "Valve springs/seats": [116],
+      "Camshaft oil seal": [118],
+      "Camshaft oil seal, installing": [119],
+      "Camshaft radial clearance": [119],
+      "Compression, checking": [120, 124],
+      "Water-cooled": [
+        121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134
+      ],
+      "Valves/springs/dimensions/": [122],
+      "refacing": [122],
+      "Valve seats, refacing": [123],
+      "Cylinder head, assembly": [125],
+      "Engine block, assembly": [126],
+      "THE": [128],
+      "Hydraulic valve lifers": [128],
+      "Pushrod tubes": [129],
+      "Cylinder head resealing": [130, 131, 132, 133, 134],
+      "Gasoline additive": [135]
+    },
+    "first_page_num": 104
+  }
+]

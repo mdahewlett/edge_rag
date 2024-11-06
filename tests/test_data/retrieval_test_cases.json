@@ -1,0 +1,83 @@
+{
+  "test_metadata": {
+    "future considerations": [
+        "Add tests for multiple sections",
+        "Add tests for overview queries",
+        "Add tests for negative test cases / null results",
+        "Special case - ignition settings - some pages have ignitiion distributor and settings",
+        "Special case - engine installation torque values - install on multiple pages, torque only on one"
+    ]
+  },
+  "single_page_tests": [
+    {
+      "query": "Where can I find information on engine codes?",
+      "expected_page": "21",
+      "expected_detailed_section_num": "2a",
+      "description": "Engine code lookup test - single page result"
+    },
+    {
+      "query": "Where can I find information on ignition settings?",
+      "page_number": "42",
+      "expected_detailed_section_num": "11",
+      "description": "Ignition settings lookup test - single page result"
+    },
+    {
+      "query": "Where can I find information on the drive belt cover?",
+      "page_number": "65",
+      "expected_detailed_section_num": "13.21a",
+      "description": "Drive belt cover lookup test - single page result"
+    },
+    {
+      "query": "Where can I find information on piston identification?",
+      "page_number": "75",
+      "expected_detailed_section_num": "13.31",
+      "description": "Piston identification lookup test - single page result"
+    },
+    {
+      "query": "Where can I find information on cylinder head bolts?",
+      "page_number": "112",
+      "expected_detailed_section_num": "15.9",
+      "description": "Cylinder head bolts lookup test - signle page result"
+    },
+    {
+      "query": "Where can I find information on pushrod tubes?",
+      "page_number": "129",
+      "expected_detailed_section_num": "15.25",
+      "description": "Pushrod tubes lookup test - signle page result"
+    },
+    {
+      "query": "Where can I find information on gasoline additive?",
+      "page_number": "135",
+      "expected_detailed_section_num": "15.31",
+      "description": "Gasoline additive lookup test - single page result"
+    }
+  ],
+  "single_section_multiple_page_tests": [
+    {
+      "query": "Where can I find information on towing?",
+      "page_number": ["27", "28"],
+      "expected_detailed_section_num": ["6", "7"],
+      "description": "Towing lookup test - multi-page result"
+    },
+    {
+      "query": "Where can I find information on the drive belt?",
+      "page_number": ["63", "64"],
+      "expected_detailed_section_num": ["13.20", "13.21"],
+      "description": "Drive belt lookup test - multi-page result"
+    },
+    {
+      "query": "Where can I find information on torque values for installing the engine?",
+      "page_number": ["63", "64"],
+      "expected_detailed_section_num": "11",
+      "description": "Engine install torque values lookup test - multi-page result"
+    }
+  ],
+  "multiple_section_tests": [
+    {
+      "query": "",
+      "page_number": "",
+      "expected_detailed_section_num": "",
+      "description": ""
+    }
+  ]
+}

@@ -161,7 +161,7 @@ def process_documents(directory):
 def main():
     current_dir = os.path.dirname(os.path.abspath(__file__))
 
-    vanagon_filepath = os.path.join(current_dir, '..', 'data', 'test_raw', 'test1.pdf')
+    vanagon_filepath = os.path.join(current_dir, '..', 'data', 'raw', 'manual_130.pdf')
 
     toc_page = find_table_of_contents(vanagon_filepath)
     logging.info(f"Table of contents page: {toc_page + 1}")
@@ -170,7 +170,7 @@ def main():
 
     print(result)
 
-    save_filepath = os.path.join(current_dir, '..', 'data', 'processed', 'test1_toc.json')
+    save_filepath = os.path.join(current_dir, '..', 'data', 'processed', 'toc.json')
 
     logging.info(f"Saving json ToC")
     with open(save_filepath, 'w') as f:

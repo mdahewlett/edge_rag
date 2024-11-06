@@ -134,12 +134,12 @@ def main():
     current_dir = os.path.dirname(os.path.abspath(__file__))
 
     # select manual pdfs and coordinate zones to test
-    pdf_path = os.path.join(current_dir, "..", "data", "raw", "ocr_130page.pdf")
+    pdf_path = os.path.join(current_dir, "..", "data", "raw", "manual_130.pdf")
     json_path = os.path.join(
-        current_dir, "..", "data", "processed", "ocr_coordinates.json"
+        current_dir, "..", "data", "interim", "coordinates.json"
     )
     save_filepath = os.path.join(
-        current_dir, "..", "data", "processed", "test1_page_summaries.json"
+        current_dir, "..", "data", "processed", "page_summaries.json"
     )
 
     zones = load_coordinate_zones(json_path)
