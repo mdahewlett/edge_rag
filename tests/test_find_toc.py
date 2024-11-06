@@ -1,5 +1,5 @@
 import unittest
-from find_toc import find_table_of_contents
+from src.find_toc import find_table_of_contents
 import os
 import logging
 
@@ -8,13 +8,13 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 class TestFindTOC(unittest.TestCase):
     def test_find_table_of_contents(self):
 
-        test_data_dir = os.path.join(os.path.dirname(__file__), '..', 'data', 'test_raw')
+        test_data_dir = os.path.join(os.path.dirname(__file__), 'test_data')
 
         test_cases = [
-            ('test1.pdf', 4), # Vanagon 
-            ('test2.pdf', 1), # Dyson, has returned None before
-            ('test3.pdf', 7), # Raspberry Py
-            ('test4.pdf', None) # Vevor Heater
+            ('find_toc_test1.pdf', 4), # Vanagon 
+            ('find_toc_test2.pdf', 1), # Dyson, has returned None before
+            ('find_toc_test3.pdf', 7), # Raspberry Py
+            ('find_toc_test4.pdf', None) # Vevor Heater
         ]
 
         for filename, expected_page in test_cases:
