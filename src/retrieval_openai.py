@@ -1,8 +1,9 @@
 import os
 import logging
 from dotenv import load_dotenv
-from typing import Optional, List, Dict
+from typing import Optional, List, Dict, Tuple
 import openai
+from openai.types.completion_usage import CompletionUsage
 import json
 from pydantic import BaseModel
 
@@ -17,7 +18,7 @@ load_dotenv()
 
 openai.api_key = os.getenv('OPEN_AI_API_KEY')
 
-class OpenAIretriever:
+class OpenAIRetriever:
 
     DEFAULT_MODEL = "gpt-4o-2024-08-06"
 
@@ -31,7 +32,7 @@ class OpenAIretriever:
     def search(self,
                query: str,
                context: List[Dict], # specifc for page summaries
-               ) -> str:
+               ) -> Tuple[Dict, CompletionUsage]:
 
         messages = [
             {
@@ -52,9 +53,10 @@ class OpenAIretriever:
                 response_format=PageNumbers,
             )
 
-        generated_reponse = response.choices[0].message.content
+        generated_reponse = json.loads(response.choices[0].message.content)
+        usage = response.usage
 
-        return generated_reponse
+        return (generated_reponse, usage)
     
 if __name__ == "__main__":
         current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -63,14 +65,14 @@ if __name__ == "__main__":
             current_dir, "..", "tests", "test_data", "test_page_summaries.json"
         )
 
-        retriever = OpenAIretriever()
+        retriever = OpenAIRetriever()
 
         page_summaries = retriever.load_page_summaries(page_summaries_filepath)
 
         query = "Where can I find information on engine codes?"
         context = page_summaries
 
-        reponse = retriever.search(query, context)
+        response, _ = retriever.search(query, context)
         logging.info(f"The question was: {query}")
-        logging.info(f"The response is: {reponse}")
+        logging.info(f"The response is: {response}")
         logging.info(f"The page and detailed section number should have been: 21 and 2a")
