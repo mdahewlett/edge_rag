@@ -5,10 +5,13 @@ from src.retrieval_openai import OpenAIRetriever
 import logging
 from typing import Dict, Any
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s = %(levelname)s = %(message)s')
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
+)
+
 
 class InstrumentedRetriever(OpenAIRetriever):
-    def __init__(self, model = None):
+    def __init__(self, model=None):
         super().__init__(model)
         self.request_count = 0
 
@@ -18,10 +21,10 @@ class InstrumentedRetriever(OpenAIRetriever):
         # Log before making the request
         logging.info(f"\n=== API Request #{self.request_count} ===")
         logging.info(f"Query: {query}")
-        
+
         # Make the API call and get result
         response, usage = super().search(query, context)
-        
+
         # Log the completion of the request
         logging.info(f"Request completed")
         logging.info(f"Token usage:")
@@ -29,9 +32,10 @@ class InstrumentedRetriever(OpenAIRetriever):
         logging.info(f"  Completion tokens: {usage.completion_tokens}")
         logging.info(f"  Total tokens: {usage.total_tokens}")
         logging.info("========================\n")
-        
+
         return response
-    
+
+
 class TestRetriever(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -53,7 +57,7 @@ class TestRetriever(unittest.TestCase):
 
     def test_single_page_search_results(self):
         for test_case in self.test_cases["single_page_tests"]:
-            
+
             logging.info(f"Testing the following case: {test_case}")
             with self.subTest(msg=test_case["description"]):
                 result = self.retriever.search(
@@ -76,7 +80,7 @@ class TestRetriever(unittest.TestCase):
             logging.info(f"Testing the following case: {test_case}")
             with self.subTest(msg=test_case["description"]):
                 result = self.retriever.search(
-                    query=test_case['query'], context=self.page_summaries
+                    query=test_case["query"], context=self.page_summaries
                 )
                 self.assertCountEqual(
                     test_case["page_num"],
@@ -88,6 +92,7 @@ class TestRetriever(unittest.TestCase):
                     result["section_num_detailed"],
                     f"Section numbers don't match for: {test_case['description']}",
                 )
+
 
 if __name__ == "__main__":
     unittest.main()
