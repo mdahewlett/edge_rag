@@ -1,0 +1,145 @@
+{
+  "test_metadata": {
+    "future considerations": [
+      "Add tests for overview queries",
+      "Add tests for negative test cases / null results",
+      "Add tests with mix of relevant and irrelevant pages",
+      "Add tests for all irrelevant pages",
+      "More test cases based on distribution of results in page number generator"
+    ]
+  },
+  "single_page_tests": [
+    {
+      "query": "Where can I find information on engine codes?",
+      "pages": {
+        "21": {
+          "relevant": "yes",
+          "page_text": "A-3 Beginning May 1987, engine codes are now either a \ntwo letter combination or a combination of one \nnumber and one letter. \nEngine code continues to precede the engine \nnumber. \nCAUTION \nEngines with identical code DO NOT \nnecessarily have identical specifications. \nnew (water-cooled shown) \nFrom May 1987 General \nCompression pressure values \nEngine codes cv DH,MV cs \nCompression pressure 6-9 10-13 34 \nvalues bar (psi} (87- 131) (145- 190) (493) \nWear limit bar (psi) 5 8 26 \n(73) (116) (377) \nMaximum permissible 3 5 difference between all (44) (73) four cylinders bar (psi) \nEngine code 2 a \nCompression pressure values "
+        }
+      },
+      "description": "Engine code lookup test - single page result"
+    },
+    {
+      "query": "Where can I find information on the drive belt cover?",
+      "pages": {
+        "65": {
+          "relevant": "yes",
+          "page_text": "13 Engine-Cranksh aft, Crankc ase \nFully close d drive belt cover \nBeginning in February 1984, the Diesel engine has \nbeen produced with a fully closed drive belt cover . \nAdditional new parts include a revised injection \npump mounting bracket and intermediate shaft \npulley . The pulley now mounts closer to the engine \nblock. \nNote \nOnly the new version pulleys will be supplied as \nservice parts . \n10 Nm (7ft lb) \n20 Nm (15ft lb) \n13.21 a Diesel \nDrive belt cover When installing the new version pulley in earlier \nengines (without fully closed belt cover) it is \nnecessary to provide at least 0.5 mm (0.020 in.) \nclearance between pulley and injection pump \nmounting bracket (arrows) . Rework pump bracket \nas necessary. \nRear belt cover \nremoving: remove camshaft sprocket \n(tap sprocket off taper with punch and \nhammer through 6 mm hole), tensione r \nand injection pump . Loosen pump mounting \nbracket \nUpper belt cover \nLower belt cover -"
+        }
+      },
+      "description": "Drive belt cover lookup test - single page result"
+    },
+    {
+      "query": "Where can I find information on piston identification?",
+      "pages": {
+        "75": {
+          "relevant": "yes",
+          "page_text": "Engine- Cra,nkshaft, Crankcase 13 \nFig. 13 Connecting rod side clearance, checking \nwear limit: 0.37 mm (0.014 in) \nFig. 14 Piston Identification \nD-17 \u2022 pistons are marked with figure 5 next \nto installation direction \n\u2022 arrow must point to drive belt side \nThickness of gasket \n(mm/in.) \n0.63-{).82 (0.025-{) 032) \n0.83-{).92 (0.033-{).036) \n0.93-1.02 (0.037-{).040) lt.5\u2022262l \nFig. 15 Cylinder head gasket , identifica tion \nwhite arrow= identification notches \nblack arrow= part number \nNote \nAlways select gasket thickness according to \npiston height above top of cylinder block \nVW382 /7-----.... \nVW385 /17--- ' \nFig. 16 Piston height, checking \nPiston height of ALL cylinders must be measured \nwhen install ing new pistons or short block . \nHead gasket is selected based on cylinder with \nHIGHEST piston height . \nPiston height \n(mm/in.) \n1.4 (0.055) \n1.5 (0.059) \n1.6 (0.063) \nDiesel Identification notches \nin head gasket \n1 \n2 \n3 \nPiston Identific ation \nPiston height \nCylinder head gasket Part No. \n068 103 383 L \n068 103 383M \n068 103 383 N \n13.31 "
+        }
+      },
+      "description": "Piston identification lookup test - single page result"
+    },
+    {
+      "query": "Where can I find information on cylinder head bolts?",
+      "pages": {
+        "112": {
+          "relevant": "yes",
+          "page_text": "G-9 Eng'lne-Cylinder Head, Valve Drive 15 \nFig. 1 Cylinder head, installing \n-Install guide pins from tool set 3070 as \nshown \n-install head gasket \n-Install head and Insert other 8 head \nbolts and tighten by hand \n-remove guide pins with tool and Install \nother 2 head bolts and tighten by hand \n-tighten head bolts, see Fig. 2 \n\u2022 \nFig. 2 Cylinder head bolts, tightening sequence \n-with engine cold, torque cylinder head \nbolts in sequence in following steps : \nstep 1 to 40 Nm (30 ft lb) \nstep 2 to 60 Nm (44 ft lb) \nstep 3 to 75 Nm (55 ft lb) \n-after step 3, turn bolts in sequence \nwith breaker bar 1/z turn (180\u00b0) further \n(two 114 turns are O.K.) \n-run engine until it reaches normal \noperating temperature (engine oil \ntemperature 50\u00b0C/122\u00b0F or when \nradiator fan starts running) \n-stop engine and retighten head bolts in \nsequence 1/4 turn (90\u00b0) further with \nbreaker bar without first loosening them \n-after about 1000 miles (with engine \neither cold or warm) retighten cylinder \nhead bolts with breaker bar, turning \nbolts in sequence 1/4 turn (90\u00b0) with-\nout loosening them and without \ninterruption Note \nHead can be removed and installed with engine \nin car. \nRemoving and installing drive belt-see Repair \nGroup 13. \nBefore working on head, remove injectors and \nglow plugs. \nEvery time head Is removed, cylinder head bolts \nmust be torqued, and again after about 1000 \nmiles as described above \nvw \nVW385/17---_...,.. _ \nFig. 3 Cylinder head gasket, determining \nthickness \n\u2022 piston he!ght must be measured when \ninstalling new pistons or short block \nand head gasket selected \n-measure piston height and select \ngasket from following table \nPiston Identification \nheight (notches In \nmm (ln.) gasket) Part No_ \n0.63-0.82 1 068103 383L \n(0.025-0.032) \n0.83-0 .92 2 068103 383M \n(0.033-0.036) \n0.93-1.02 3 068103 383N \n(0.037 -0.040) \nFig. 4 Cylinder head gasket, \nIdentification/Installation \n\u2022 identified by Part No. and notches \n(arrows) \n-always select gasket thickness accord-\ning to piston height above top of \ncylinder block \n\u2022 marking OBEN on gasket must face \ncylinder head \nCylinder head \nCylrnder head bolts 15 9 \nCylinder head gaske t \u2022 Diese l "
+        }
+      },
+      "description": "Cylinder head bolts lookup test - signle page result"
+    },
+    {
+      "query": "Where can I find information on pushrod tubes?",
+      "pages": {
+        "129": {
+          "relevant": "yes",
+          "page_text": "H-10 Engine-Cylinder Head, Valve Drive 15 \nPushrod tubes, replacing \nNote \nPushro<! tubes supplied as replacement parts can be \ninstalled with engine in place. \n-remove valve cover \n-remove rocker arm\u00b7 shaft, pull push rod out \n-remove lower cover plate \n-remove defective pushrod tube with pliers or \nscrewdriver \n-squeeze new pushrod tube together and insert \nwith new sealing rings as shown (arrow) \n(tube seam faces upward, small end to head) \n-insert pushrod and install rocker arm shaft \nCAUTION \nGuide pushrod carefully into seat of hydraulic \nvalve lifter. \nIf pushrod rests on edge of lifter basic setting \nwill be incorrect and lifter will be damaged \nwhen engine is started. \n-adjust hydraulic valve lifters, see page 15.23 \nWater-cooled I Pushrod tubes 15 \u2022 2 5 "
+        }
+      },
+      "description": "Pushrod tubes lookup test - signle page result"
+    },
+    {
+      "query": "Where can I find information on gasoline additive?",
+      "pages": {
+        "135": {
+          "relevant": "yes",
+          "page_text": "-\nH\u00b716 Engine-Cylinder Head, Valve Drive 15 \nGasoline additive \n\"Autobahn Gasoline Additive\" has been tested by \nVolkswagen, and found to be effective in reducing \ncarbon deposits that result from fuel and \nlubricating oil residue. The additive works best with \nunleaded gasoline, but also works with leaded fuel. \n\"Autobahn Gasoline Additive\" is supplied by \nVolkswagen of America under Part No. ZVW 246 001 . \nNote \nRead product label for additional information. Read \nall cautions and warnings. \nCaution \nDo not exceed this recommendation: \nOil change \ninterval \nMiles \n5,000 \n7,500 Max. Treatments \nbetween oil \nchanges \n2 \n4 \nExcessive carbon deposits reduce engine \nperformance by: \n\u2022 idle hunting (idle speed goes up and down) \n\u2022 poor hot or cold starting (starter cranking takes \nlonger) \n\u2022 engine run-on (dieseling) \n\u2022 pinging during full-throttle acceleration \nTo help clean out carbon deposits and minimize \nfuture carbon build-up: \n-make sure that ignition and fuel systems are \nadjusted to specifications \n-add one (1) 20 oz. bottle \"Autobahn Gasoline \nAdditive\" to fuel tank. Fill tank completely. Do \nnot refill until the gauge reads \"1 I 4\" \n-use only gasoline with a detergent additive \npackage. Information about fuel composition is \navailable from any gas station or from the \nstation's fuel supplier. \nCAUTION \nPart numbers are for reference only. Always \nconsult your Parts Department for latest \ninformation. \nGasoline additive 15.31 "
+        }
+      },
+      "description": "Gasoline additive lookup test - single page result"
+    }
+  ],
+  "single_section_multiple_page_tests": [
+    {
+      "query": "Where can I find information on towing?",
+      "pages": {
+        "27": {
+          "relevant": "yes",
+          "page_text": "General \nEmergency Towing \nNote \nAll towing procedures are based on use of typical \nsling-type tow truck equipment. If other types of \ntowing equipment are used, these procedures may \nnot apply \n\u2022 whenever possible, tow with rear wheels off \nground \n\u2022 if car with automatic transmission must be \ntowed with front wheels lifted because of \nextensive damage, dollies should be used under \nrear wheels if towing speed will exceed 30 mph \nor distance over 30 miles. Exceeding these limits \nwill damage transmission \n\u2022 selector lever must be in \"N\" position when \nmoving car with automatic transmission with rear \nwheels on ground \nWARNING \nAlways secure front wheels with an external \nsteering wheel lock when towing with rear \nwheels off ground. \nNever use ignition steering lock to secure \nfront wheels. \nNever allow passengers to ride in towed \nvehicle \nI QO-A1891 \nFront hook-up -all models thru 1985 \n-attach grab hooks under lower control arms \noutboard of shock absorber mounts (as shown) \n-place 4x4 wooden crossbeam under spare tire \n-place tow bar under 4x4 \n-double wrap chains on tow bar \n-attach safety chains to lower control arms (as \nshown) \n6 Towing Vanagon Front hook-up-From 1986 m.y. \n-remove front license plate/bracket if interfere \nwith front hook-up \n4 x 4 x 48'' cross beam \nT-hooks \n-attach T-hooks (above) to tie down slots in long \nmembers (as shown) \n-position four foot long 4x4 wooden crossbeam \nunder bumper (as shown) \n-double wrap chains on tow bar \n-attach safety chains on axle platform \nCAUTION \nDo not attach hooks or chains around brake \nlines \n-raise vehicle to allow four inches clearance \nbetween tires and road \nTowing speed/distance \nFront tow -all models EXCEPT Syncro \nAutomatic transmission \n30 mph (48 kmh) for up to 30 miles (48 km) \nManual transmission \n50 mph (80 kmh) for up to 50 miles (80 km) "
+        },
+        "28": {
+          "relevant": "yes",
+          "page_text": "A-8 Rear hook-up -air cooled gasoline models only \n-attach grab hooks to trailing arms \n-place 4x4 under engine carrier to space tow bar \naway from heat exchangers \n-attach safety chains to trailing arms \nRear hook-up -water-cooled/diesel models \nThe Vanagon cannot be towed with conventional \nsling-type towing equipment to avoid damage to \nvalance panel. \nVanagon Syncro \nFront/rear hook-up \nThe Vanagon Syncro cannot be towed with \nconventional sling-type towing equipment nor with \nwheel lift equipment or wheel dollies to avoid \ndamage to the all-wheel drive system. \n-use flat-bed tow truck only. General \nFlat Towing \nVehicles with automatic transmission may be \ntowed forward (in driving direction} at speeds up to \n30 mph for maximum of 30 miles \nCAUTION \nTowing vehicles at more than 30 mph and/or \nfor distance greater than 30 miles with rear \nwheels on ground will damage automatic \ntransmission due to lack of lubrication \nIf towing speed will be greater than 30 mph or \ndistance greater than 30 miles, temporary \nmodifications to vehicle are required as follows: \nWork sequence \n-remove drive shaft assemblies \n-seal drive shaft flanges against water and dirt \n-wrap drive shafts and store in vehicle \nManual transmission (Including Syncro) \nThere are no restrictions on speed or distance \nwhen towing manual transmission cars behind \nother vehicles \nRear towing -all I I Syncro-front/rear towing Towing 7 "
+        }
+      },
+      "description": "Towing lookup test - multi-page result"
+    },
+    {
+      "query": "Where can I find information on the drive belt?",
+      "pages": {
+        "63": {
+          "relevant": "yes",
+          "page_text": "13 Crankcase \nFig. 1 Engine , mounting In engine stand \nFtg. 2 Fuel Injection pipes , removing/Installing \n-remove with tool 3035 \n-tighten to 25 Nm (18ft lb) \nFig. 3 Injection pump sprocket, removing \n-loosen sprocket retaining nut slightly \n13.20 -carefully apply tension with puller \n-hit puller spindle head (arrow) with \nlight hammer taps until sprocket \nloosens from injection pump shaft \n-remove puller and nut \n-remove sprocket by hand \nFuel InJection pipes \nInjection pump sprocket \nDrfve belt Diesel Drive belt, removing \nWork sequence \n-remove bolt cover and valve cover \n-turn engine to TDC arrow on cylinder No. 1 and \nfix camshaft In position with tool 2065A \n-align tool as follows: \n\u2022 turn camshaft until one end of tool touches \ncylinder head \n\u2022 measure gap at other end of tool with feeler \ngauge \n\u2022 take half of measurement and insert feeler of \nthis thickness between tool and cylinder \nhead \n\u2022 turn camshaft so that tool rests on feeler \n\u2022 insert second feeler of same thickness be-\ntween other end of tool and cylinder head \nD-4 "
+        },
+        "64": {
+          "relevant": "yes",
+          "page_text": "-lock injection pump spro cket in position With \npin 2064 \n-check that marks on spro cket, bracket and \npump body are align ed (eng ine at TDC) \n-loose n tenslone r \n-remove V-belt pulley from crankshaft \n-remove drive belt \nDrive belt, installing \nWork sequence \n-check that TDC mark on clutch pressure plate \nis aligned with reference mark \n-loosen camshaft sprocket bolt 112 turn and \nloosen gear from camshaft by tapping with \nrubber hammer \n-install drive belt and remove pin 2064 from \ninjection pump sprocket \n-tension belt by turning tensioner to right \n-check that on VW 210, scale reads 12-13 \n\u2022 check belt tension between camshaft \nsprocket and injection pump sprocket \n-tighten cams haft sprocket bolt to \n45 Nm (33ft lb) \n-remove tool from camshaft \n0-S Engine-C rankshaft, Crank case \n-turn crankshaft 2 turns in direction of engine \nrotation (clockwise) \n-strike belt once with rubber hammer between \ncamshaft sprocket and Injection pump \nsprocket \n-check belt tensiorn again \n-check injection pump timing, see \nRepair Group 23 \nDrive belt sprocket bolt, tightening \n_llj \n12 rnm boll \nOld Version \n150 Nm (108ft lb) \nwith locking compound \nNew Version \n200 Nm (148 ft lb) \nlubricate threads before installing \nShown above are the two versions of drive belt \nsprocket used on Diesel Vanagon . Ensure that the \ncorrect tightening torque specification is used \nwhen repairing these engines. 13 \n13.21 Diesel Drive belt \nDrive belt sprocket bolt "
+        },
+        "65": {
+          "relevant": "yes",
+          "page_text": "13 Engine-Cranksh aft, Crankc ase \nFully close d drive belt cover \nBeginning in February 1984, the Diesel engine has \nbeen produced with a fully closed drive belt cover . \nAdditional new parts include a revised injection \npump mounting bracket and intermediate shaft \npulley . The pulley now mounts closer to the engine \nblock. \nNote \nOnly the new version pulleys will be supplied as \nservice parts . \n10 Nm (7ft lb) \n20 Nm (15ft lb) \n13.21 a Diesel \nDrive belt cover When installing the new version pulley in earlier \nengines (without fully closed belt cover) it is \nnecessary to provide at least 0.5 mm (0.020 in.) \nclearance between pulley and injection pump \nmounting bracket (arrows) . Rework pump bracket \nas necessary. \nRear belt cover \nremoving: remove camshaft sprocket \n(tap sprocket off taper with punch and \nhammer through 6 mm hole), tensione r \nand injection pump . Loosen pump mounting \nbracket \nUpper belt cover \nLower belt cover -"
+        }
+      },
+      "description": "Drive belt lookup test - multi-page result"
+    },
+    {
+      "query": "Where can I find information on torque values for installing the engine?",
+      "pages": {
+        "36": {
+          "relevant": "yes",
+          "page_text": "Engine, installing \n(Air cooled-AFC) \nProceed in reverse order of removing and \nnote following: \n-check clutch release bearing for wear, replace \nlf necessary \n-lightly lubricate splines on main drive shaft \nand contact points of clutch release bearing/ \nclutch release lever with MoSa grease \n\u2022 do not lubricate clutch release bearing guide \nsleeve \n-always replace all self-locking \nManual transmission \n-adjust accelerah<!r cable at full throttle \nposition \nAutomatic transmission \n-adjust accelerator cable \nTightening torques: \n\u2022 engine to transmission \n\u2022 engine carrier to mount \n\u2022 transmission mount \n\u2022 torque converter to drive plate 30 Nm (22ft I b) \n25 Nm (18ft lb) \n30 Nm(22 ft lb) \n30 Nm(18 ft lb) . Engine -Assembly 10 \nAir cooled -AFC \nEngine, installing 1 0 \u2022 5 "
+        },
+        "38": {
+          "relevant": "yes",
+          "page_text": "-remove all 7 engine/transmission mounting \nbolts 1 \n-remove support member bolts 2 and remove \nsupport member \n-support engine with engine crane and adaptor \n3058 \n\u2022 angle of engine to transmission can be \nadjusted by turning knob (arrow) \n-remove nuts (arrow) from front engine mounts \non left and right sides \n-remove bolts from both front and rear engine \nmounts \n-lower engine/transmission assembly until \nengine can be separated from transmission Engine-A ssem bly 1 0 \n-support transmission with VW 785/1 B \n-remove engine from transmission and lower it \nout of vehicle \nEngine, installing \nProceed in reverse order of removing and note \nfollowing: \n-adjust angle of engine to transmission before \njoining engine and transmission \nCAUTION \nDo not interchange fuel supply and fuel \nreturn pipe union screws. For identificat ion, \nfuel return pipe union screw Is marked with \nOUT on hex. head . Fuel return line also has \nsmaller diameter than fuel supply line \n-adjust cold start cable, see Repair Group 23 \n-refill coolant, see Repair Group 19 \nTightening torques: \n\u2022 engine to transmission \nM10 bolts \nM12 bolts \n\u2022 engine mounts \n\u2022 support member \n\u2022 fuel line union screws \non injection pump 45 Nm (33 ft lb) \n80 Nm (59 ft lb) \n85 Nm (63 ft lb) \n45 Nm (33 ft lb) \n22 Nm (16ft lb) \nDiesel \nEngine, removing/installing 1 0 \u2022 7 "
+        },
+        "41": {
+          "relevant": "yes",
+          "page_text": "10 Engine-Assembly \n-loosen transmission mount bolt (arrow) \n-attach VW 785/1 B so that distance \nbetween support pad and transmission \nhousing is about 120 mm (4 3/4 in.) \n-support engine with US 612/5 and floor \n-remove engine carrier bolts 15 \n10.10 Engine, femovlng/installin9 -lower engine/transmission assembly until transmis-\nsion rests on VW 785/1 B \n-when lowering, adjust angle of inclination on floor \ncrane head and keep wiring harness aside so that it \ncan pass oil filler tube \n-remove nuts 2 of lower engine mounting bolts \n-remove engine from transmission and lower it out \nof vehicle \n-mount engine on repair stand with engine hOlder \nVW 307a \nEngine, installing \nProceed in reverse order of removing and note \nfollowing: \n-check clutch release bearing for wear and \nreplace if necessary \nSyncro only \n-clean joining faces of engine and transmission \nand lightly coat joining surface of engine with \nsilicone adhesive seal Part No. AMV 176 000 05 \n-lubricate clutch release bearing and main shaft \nsplines lightly with MoS2 grease (do not lubricate \nguide sleeve for release bearing) \n-replace all self-locking nuts on engine mounts \n-check and adjust, If necessary, accelerator \ncable/throttle controls, see Repair Group 20 \nTightening torques: \n\u2022 engine to transmission \n\u2022 engine carrier to body \n\u2022 transmission mounts \n\u2022 torque converter to drive place \nWater-cooled 30 Nm (22 ft lb) \n25 Nm (18 ft lb) \n30 Nm (22 ft lb) \n20 Nm (15ft lb) "
+        }
+      },
+      "description": "Engine install torque values lookup test - multi-page result"
+    }
+  ],
+  "multiple_section_tests": [
+    {
+      "query": "Where can I find information on ignition settings?",
+      "pages": {
+        "29": {
+          "relevant": "yes",
+          "page_text": "General \nEngine code letters cv \nDistributor (Part No.) 022 905 205S \nIgnition timing 7.5\u2022 BTDC \nTiming mark location: crankshaft pulley I l6 \\2 8 4 0-;;----__. -..... 128\u00b70501 \nIdle speed \nmanual 800- 950 rpm \nautomatic 850-1000 rpm \nVacuum hose disconnected \nDwell angle new points 44-5o\u00b7 \nwear limit 42-58\u00b0 \nCentrifugal advance (crankshaft degrees) \nstart 1000-1200 rpm \n9-14\u2022 at 1600 rpm \nend 21-25\u2022 at 3400 rpm \nVacuum advance \nstart 107-147 mbar (80-110 mm Hg) \nend 266 mbar (200 mm Hg) \n8-12\u00b0 \nSpark plugs Bosch w 145M2. waco ' Beru 14511413L \nChampion N 288 \nSpark plug tightening torque 30 Nm (22 ft lb) \nSpark plug gap 0.6-0.7 mm (0.023-0.028 in.) \nFiring order 1-4-3-2 \n\u00b7 8 Ignition distributor and settings Air-cooled AFC CAN/USA, not Calif. "
+        },
+        "31": {
+          "relevant": "yes",
+          "page_text": "General \nEngine code letters DH \nDistributor (Part No.) 025 905 205 D \nIgnition timing 5\u00b11 \u2022 ATDC \nTiming mark location: crankshaft pulley \nIdle speed 850\u00b150 rpm \nvacuum hoses connected \nIdle stabilizer control unit electrical plugs disconnected from unit \nand connected together \nCentrifugal advance (crankshaft degrees) \nstart 1050-1150 rpm \n16-20\u2022 at 2400 rpm \nend 21-25 \u2022 at 3800 rpm \nVacuum advance \nstart 190-230 mbar (14.0-17.0 em Hg) \nend 360 mbar (27.0 em Hg) \n12-16\u00b0 \nVacuum retard \nstart 100-220 mbar (7.5-16.5 em Hg) \nend 260-360 mbar (19.5-27.0 em Hg) \n9-11\u00b0 \nSpark plugs Bosch W7CO \nBeru 14 L-7 C \nChampion N288 \nSpark plug gap 0. 7 + 0.1 mm (0.028 + 0.004 in.) \nSpark plug tightening torque 20 Nm (14ft lb) \nFiring order 1-4-3-2 \n1 0 Ignition distributor and settings Water-cooled Digijet "
+        },
+        "42": {
+          "relevant": "yes",
+          "page_text": "Introduction \nEngine code \nPart no.: Ignition distributor \nDigifant control \nunit*** \nIgnition timing Checking value \nAdjusting value \nTiming mark location \n., \nRPM* \nIgnition adjustment \u2022\u2022 \n-\u00b7 timing map --\nRPM \nDegrees \nRPM limit Switch-off RPM of RPM \ndigifant control unit \nFiring order CYL. \nSpark plugs Bosch \n(tightening Beru \ntorque: 20 Nm (14 ft lb) Champion \nSpark plug gap mm (in) \n\u00b7) Engine oil temperature 80\" c. (176\u00b0F) connector \nof temperature sensor II disconnected with \nengine running. \n\u00b7\u00b7) Engine oil temperature BO\"C, connector of \ntemperature sensor II connected. \n\u2022 \"\") When replacing control unit always replace old \ncontrol unit with newer version. \nCAUTION \nPart numbers are for reference only. Always \ncheck with your parts department for latest part \ninformation. General \nOctober 1985 \nMV \n025 905 205M \n025 906 0220 old \n025 906 0221022A new \n3\u00b0 \u2022 r before TDC \nso :t: 1 o before TDC \n\u2022 \n-\n12&-3901 \n2000.2500 \nApprox. 3000 \n35 :t: 5\u00b0 \n5600 \n1-4\u00b73-2 \nW7CCO \n14L\u00b77CU, 14L-7C \nN288 \n0.7 ::: .1 mm (0.028 ::: 0.003 in) \nDigifant \nIgnition settings 11 "
+        }
+      },
+      "description": "Ignition settings lookup test - multi-section result"
+    }
+  ]
+}
