@@ -15,16 +15,15 @@ load_dotenv()
 
 openai_api_key = os.getenv("OPENAI_API_KEY")
 
-logging.info("Initializing OpenAI client")
-client = OpenAI(api_key=openai_api_key)
-
-
 class OpenAIGenerator:
     DEFAULT_MODEL = "gpt-4o-2024-08-06"
 
-    def __init__(self, model: Optional[str] = None):
+    def __init__(self, client: Optional[OpenAI] = None, model: Optional[str] = None):
+        self.client = client or OpenAI(api_key=openai_api_key)
         self.model = model or self.DEFAULT_MODEL
-        logging.info(f"Initialized generator with model {self.model}")
+        self.logger = logging.getLogger(__name__)
+        self.logger.info("Initializing OpenAI client")
+        self.logger.info(f"Initialized generator with model {self.model}")
 
     def get_context(self, document_path, page_numbers: List[str]):
         reader = PdfReader(document_path)
